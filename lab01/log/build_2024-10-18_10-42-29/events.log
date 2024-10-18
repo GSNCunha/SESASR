@@ -1,0 +1,397 @@
+[0.000000] (-) TimerEvent: {}
+[0.000886] (lab01_pkg) JobQueued: {'identifier': 'lab01_pkg', 'dependencies': OrderedDict()}
+[0.001015] (turtlesim) JobQueued: {'identifier': 'turtlesim', 'dependencies': OrderedDict()}
+[0.001483] (lab01_pkg) JobStarted: {'identifier': 'lab01_pkg'}
+[0.018712] (turtlesim) JobStarted: {'identifier': 'turtlesim'}
+[0.099799] (-) TimerEvent: {}
+[0.201402] (-) TimerEvent: {}
+[0.303198] (-) TimerEvent: {}
+[0.394563] (turtlesim) JobProgress: {'identifier': 'turtlesim', 'progress': 'cmake'}
+[0.396335] (turtlesim) JobProgress: {'identifier': 'turtlesim', 'progress': 'build'}
+[0.397527] (turtlesim) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/lincunha/lab01/build/turtlesim', '--', '-j8', '-l8'], 'cwd': '/home/lincunha/lab01/build/turtlesim', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'lincunha'), ('GIT_ASKPASS', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lincunha/lab01/install/turtlesim/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/lincunha'), ('TERM_PROGRAM_VERSION', '1.94.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-9e1243e5-49bd-4eef-9d79-2a51bbdfdb1e.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lincunha/lab01/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'lincunha'), ('NAME', 'Sadigursky'), ('WSL_INTEROP', '/run/WSL/335_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/d/Programas/runtime/win64:/mnt/d/Programas/bin:/mnt/d/bin:/mnt/d/Programas/polyspace/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/d/runtime/win64:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/:/mnt/c/Users/Gabri/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gabri/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-c9e154ece5.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/lincunha/lab01/install/turtlesim:/home/lincunha/lab01/install/lab01_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/lincunha/lab01/build/turtlesim'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/lincunha/lab01/install/turtlesim:/home/lincunha/lab01/install/lab01_pkg:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[0.405973] (-) TimerEvent: {}
+[0.476619] (turtlesim) StdoutLine: {'line': b'[  1%] Built target turtlesim__cpp\n'}
+[0.479792] (turtlesim) StdoutLine: {'line': b'[ 11%] Built target turtlesim__rosidl_generator_c\n'}
+[0.503621] (turtlesim) StdoutLine: {'line': b'[ 11%] Built target ament_cmake_python_copy_turtlesim\n'}
+[0.506361] (-) TimerEvent: {}
+[0.519764] (turtlesim) StdoutLine: {'line': b'[ 22%] Built target turtlesim__rosidl_typesupport_cpp\n'}
+[0.521555] (turtlesim) StdoutLine: {'line': b'[ 44%] Built target turtlesim__rosidl_typesupport_introspection_c\n'}
+[0.524010] (turtlesim) StdoutLine: {'line': b'[ 44%] Built target turtlesim__rosidl_typesupport_fastrtps_cpp\n'}
+[0.524518] (turtlesim) StdoutLine: {'line': b'[ 51%] Built target turtlesim__rosidl_typesupport_introspection_cpp\n'}
+[0.525778] (turtlesim) StdoutLine: {'line': b'[ 61%] Built target turtlesim__rosidl_typesupport_fastrtps_c\n'}
+[0.535774] (turtlesim) StdoutLine: {'line': b'[ 71%] Built target turtlesim__rosidl_typesupport_c\n'}
+[0.567204] (turtlesim) StdoutLine: {'line': b'[ 73%] Built target draw_square\n'}
+[0.572301] (turtlesim) StdoutLine: {'line': b'[ 76%] Built target turtle_teleop_key\n'}
+[0.572762] (turtlesim) StdoutLine: {'line': b'[ 77%] Built target mimic\n'}
+[0.575917] (turtlesim) StdoutLine: {'line': b'[ 77%] Built target turtlesim\n'}
+[0.581240] (turtlesim) StdoutLine: {'line': b'[ 83%] Built target turtlesim_node\n'}
+[0.606489] (turtlesim) StdoutLine: {'line': b'[ 84%] Built target turtlesim__py\n'}
+[0.606841] (-) TimerEvent: {}
+[0.647817] (turtlesim) StdoutLine: {'line': b'[ 93%] Built target turtlesim__rosidl_generator_py\n'}
+[0.684485] (turtlesim) StdoutLine: {'line': b'[ 98%] Built target turtlesim__rosidl_typesupport_introspection_c__pyext\n'}
+[0.684820] (turtlesim) StdoutLine: {'line': b'[ 98%] Built target turtlesim__rosidl_typesupport_c__pyext\n'}
+[0.685134] (turtlesim) StdoutLine: {'line': b'[100%] Built target turtlesim__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.707663] (-) TimerEvent: {}
+[0.809211] (-) TimerEvent: {}
+[0.912037] (-) TimerEvent: {}
+[0.987180] (turtlesim) StdoutLine: {'line': b'running egg_info\n'}
+[0.989120] (turtlesim) StdoutLine: {'line': b'writing turtlesim.egg-info/PKG-INFO\n'}
+[0.989843] (turtlesim) StdoutLine: {'line': b'writing dependency_links to turtlesim.egg-info/dependency_links.txt\n'}
+[0.990854] (turtlesim) StdoutLine: {'line': b'writing top-level names to turtlesim.egg-info/top_level.txt\n'}
+[0.995459] (turtlesim) StdoutLine: {'line': b"reading manifest file 'turtlesim.egg-info/SOURCES.txt'\n"}
+[0.996509] (turtlesim) StdoutLine: {'line': b"writing manifest file 'turtlesim.egg-info/SOURCES.txt'\n"}
+[1.012503] (-) TimerEvent: {}
+[1.074000] (turtlesim) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_turtlesim_egg\n'}
+[1.100231] (turtlesim) CommandEnded: {'returncode': 0}
+[1.112938] (-) TimerEvent: {}
+[1.118321] (lab01_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/lab01_pkg', 'build', '--build-base', '/home/lincunha/lab01/build/lab01_pkg/build', 'install', '--record', '/home/lincunha/lab01/build/lab01_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/lincunha/lab01/src/lab01_pkg', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'lincunha', 'GIT_ASKPASS': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/lincunha/lab01/install/turtlesim/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/lincunha', 'TERM_PROGRAM_VERSION': '1.94.2', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-9e1243e5-49bd-4eef-9d79-2a51bbdfdb1e.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/lincunha/lab01/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'lincunha', 'NAME': 'Sadigursky', 'WSL_INTEROP': '/run/WSL/335_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/d/Programas/runtime/win64:/mnt/d/Programas/bin:/mnt/d/bin:/mnt/d/Programas/polyspace/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/d/runtime/win64:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/:/mnt/c/Users/Gabri/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gabri/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-c9e154ece5.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/lincunha/lab01/install/turtlesim:/home/lincunha/lab01/install/lab01_pkg:/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/lincunha/lab01/build/lab01_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/lincunha/lab01/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'CMAKE_PREFIX_PATH': '/home/lincunha/lab01/install/turtlesim', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[1.213398] (-) TimerEvent: {}
+[1.314283] (-) TimerEvent: {}
+[1.415031] (-) TimerEvent: {}
+[1.488875] (turtlesim) JobProgress: {'identifier': 'turtlesim', 'progress': 'install'}
+[1.500959] (turtlesim) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/lincunha/lab01/build/turtlesim'], 'cwd': '/home/lincunha/lab01/build/turtlesim', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'lincunha'), ('GIT_ASKPASS', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/lincunha/lab01/install/turtlesim/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/lincunha'), ('TERM_PROGRAM_VERSION', '1.94.2'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-9e1243e5-49bd-4eef-9d79-2a51bbdfdb1e.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/node'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/lincunha/lab01/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'lincunha'), ('NAME', 'Sadigursky'), ('WSL_INTEROP', '/run/WSL/335_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/d/Programas/runtime/win64:/mnt/d/Programas/bin:/mnt/d/bin:/mnt/d/Programas/polyspace/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/d/runtime/win64:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/:/mnt/c/Users/Gabri/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gabri/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000/'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-c9e154ece5.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/lincunha/lab01/install/turtlesim:/home/lincunha/lab01/install/lab01_pkg:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/lincunha/lab01/build/turtlesim'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/lincunha/lab01/install/turtlesim:/home/lincunha/lab01/install/lab01_pkg:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[1.513734] (turtlesim) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.514285] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/ament_index/resource_index/rosidl_interfaces/turtlesim\n'}
+[1.514717] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.515090] (-) TimerEvent: {}
+[1.515805] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.516304] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.516710] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__functions.h\n'}
+[1.517494] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__struct.h\n'}
+[1.518125] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__functions.c\n'}
+[1.518531] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__type_support.h\n'}
+[1.518911] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/rotate_absolute.h\n'}
+[1.519313] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.519853] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/teleport_relative.h\n'}
+[1.520548] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.520942] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__functions.h\n'}
+[1.521368] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__type_support.h\n'}
+[1.521839] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__functions.c\n'}
+[1.522247] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__type_support.h\n'}
+[1.522772] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__functions.h\n'}
+[1.523174] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__functions.c\n'}
+[1.524770] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__functions.c\n'}
+[1.526094] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__struct.h\n'}
+[1.526982] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__struct.h\n'}
+[1.527263] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__type_support.h\n'}
+[1.527863] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__functions.h\n'}
+[1.528340] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__functions.h\n'}
+[1.528985] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__type_support.h\n'}
+[1.529996] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__type_support.h\n'}
+[1.530172] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__struct.h\n'}
+[1.530400] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__functions.c\n'}
+[1.530763] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__functions.c\n'}
+[1.531133] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__struct.h\n'}
+[1.531729] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__functions.h\n'}
+[1.531861] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__struct.h\n'}
+[1.531964] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/kill.h\n'}
+[1.532460] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/spawn.h\n'}
+[1.533224] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/teleport_absolute.h\n'}
+[1.534090] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/set_pen.h\n'}
+[1.534531] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.534935] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/color.h\n'}
+[1.535346] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/rosidl_generator_c__visibility_control.h\n'}
+[1.535996] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.536202] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__struct.h\n'}
+[1.536669] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__type_support.h\n'}
+[1.537096] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__functions.c\n'}
+[1.537408] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__functions.h\n'}
+[1.537702] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__struct.h\n'}
+[1.537989] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__functions.h\n'}
+[1.538307] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__type_support.h\n'}
+[1.538677] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__functions.c\n'}
+[1.539046] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/pose.h\n'}
+[1.539394] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/library_path.sh\n'}
+[1.540231] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/library_path.dsv\n'}
+[1.541128] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_generator_c.so\n'}
+[1.541373] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.541585] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.541809] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.542041] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__rosidl_typesupport_fastrtps_c.h\n'}
+[1.542249] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.542465] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.542611] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__rosidl_typesupport_fastrtps_c.h\n'}
+[1.542809] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__rosidl_typesupport_fastrtps_c.h\n'}
+[1.542988] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__rosidl_typesupport_fastrtps_c.h\n'}
+[1.543181] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__rosidl_typesupport_fastrtps_c.h\n'}
+[1.543362] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__rosidl_typesupport_fastrtps_c.h\n'}
+[1.543602] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.543853] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.544075] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__rosidl_typesupport_fastrtps_c.h\n'}
+[1.544274] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__rosidl_typesupport_fastrtps_c.h\n'}
+[1.544454] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[1.544666] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_fastrtps_c.so\n'}
+[1.544846] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.545051] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.545790] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.546027] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__traits.hpp\n'}
+[1.546610] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__builder.hpp\n'}
+[1.546948] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__struct.hpp\n'}
+[1.547110] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/rotate_absolute.hpp\n'}
+[1.547242] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.547363] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.547482] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__traits.hpp\n'}
+[1.547599] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__traits.hpp\n'}
+[1.547713] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__builder.hpp\n'}
+[1.547829] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__builder.hpp\n'}
+[1.547958] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__struct.hpp\n'}
+[1.548067] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__struct.hpp\n'}
+[1.548188] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__builder.hpp\n'}
+[1.548302] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__traits.hpp\n'}
+[1.548418] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__struct.hpp\n'}
+[1.548532] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__struct.hpp\n'}
+[1.548646] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__struct.hpp\n'}
+[1.548760] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__builder.hpp\n'}
+[1.548874] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__traits.hpp\n'}
+[1.548986] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__builder.hpp\n'}
+[1.549102] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__traits.hpp\n'}
+[1.549217] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/teleport_relative.hpp\n'}
+[1.549339] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/spawn.hpp\n'}
+[1.549452] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/set_pen.hpp\n'}
+[1.549797] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/kill.hpp\n'}
+[1.550098] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/teleport_absolute.hpp\n'}
+[1.550450] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.550667] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.550838] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__builder.hpp\n'}
+[1.550931] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__builder.hpp\n'}
+[1.551013] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__traits.hpp\n'}
+[1.551095] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__struct.hpp\n'}
+[1.551177] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__struct.hpp\n'}
+[1.551258] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__traits.hpp\n'}
+[1.551338] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/color.hpp\n'}
+[1.551421] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/pose.hpp\n'}
+[1.551516] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.551597] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.551679] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.551761] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/dds_fastrtps\n'}
+[1.551843] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.551926] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.552008] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.552088] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552170] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552252] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552333] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/dds_fastrtps\n'}
+[1.552424] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552507] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552588] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.552669] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.552750] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552832] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[1.552912] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/dds_fastrtps\n'}
+[1.552993] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[1.553074] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_fastrtps_cpp.so\n'}
+[1.553155] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.553235] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.553315] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.553394] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__type_support.c\n'}
+[1.553475] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__rosidl_typesupport_introspection_c.h\n'}
+[1.553568] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.553651] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.553732] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__rosidl_typesupport_introspection_c.h\n'}
+[1.553813] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__rosidl_typesupport_introspection_c.h\n'}
+[1.553913] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__type_support.c\n'}
+[1.553995] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__type_support.c\n'}
+[1.554076] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__rosidl_typesupport_introspection_c.h\n'}
+[1.554158] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__type_support.c\n'}
+[1.554239] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__type_support.c\n'}
+[1.554320] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__type_support.c\n'}
+[1.554401] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__rosidl_typesupport_introspection_c.h\n'}
+[1.554482] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__rosidl_typesupport_introspection_c.h\n'}
+[1.554630] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.554734] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.554818] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__type_support.c\n'}
+[1.554939] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__rosidl_typesupport_introspection_c.h\n'}
+[1.555038] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__type_support.c\n'}
+[1.555121] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__rosidl_typesupport_introspection_c.h\n'}
+[1.555216] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[1.555299] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_introspection_c.so\n'}
+[1.555381] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_c.so\n'}
+[1.555463] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim\n'}
+[1.555544] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action\n'}
+[1.555625] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail\n'}
+[1.555748] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__type_support.cpp\n'}
+[1.555867] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/action/detail/rotate_absolute__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.555953] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv\n'}
+[1.556034] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail\n'}
+[1.556115] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.556335] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.556446] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.556529] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/kill__type_support.cpp\n'}
+[1.556611] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/set_pen__type_support.cpp\n'}
+[1.556691] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_relative__type_support.cpp\n'}
+[1.556772] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__type_support.cpp\n'}
+[1.556852] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__type_support.cpp\n'}
+[1.556934] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/teleport_absolute__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.557034] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/srv/detail/spawn__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.557117] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg\n'}
+[1.557199] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail\n'}
+[1.557322] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.557700] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__type_support.cpp\n'}
+[1.558064] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/color__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.558433] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/include/turtlesim/turtlesim/msg/detail/pose__type_support.cpp\n'}
+[1.558803] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_introspection_cpp.so\n'}
+[1.559193] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_typesupport_cpp.so\n'}
+[1.559794] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/pythonpath.sh\n'}
+[1.560195] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/pythonpath.dsv\n'}
+[1.560409] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim-1.4.2-py3.10.egg-info\n'}
+[1.560688] (turtlesim) StdoutLine: {'line': b'-- Installing: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim-1.4.2-py3.10.egg-info/dependency_links.txt\n'}
+[1.561289] (turtlesim) StdoutLine: {'line': b'-- Installing: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim-1.4.2-py3.10.egg-info/top_level.txt\n'}
+[1.561471] (turtlesim) StdoutLine: {'line': b'-- Installing: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim-1.4.2-py3.10.egg-info/SOURCES.txt\n'}
+[1.561570] (turtlesim) StdoutLine: {'line': b'-- Installing: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim-1.4.2-py3.10.egg-info/PKG-INFO\n'}
+[1.561662] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim\n'}
+[1.561751] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/_turtlesim_s.ep.rosidl_typesupport_c.c\n'}
+[1.561840] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.561931] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/action\n'}
+[1.562020] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/action/_rotate_absolute_s.c\n'}
+[1.562108] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/action/_rotate_absolute.py\n'}
+[1.562198] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/action/__init__.py\n'}
+[1.562298] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv\n'}
+[1.562386] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_kill.py\n'}
+[1.562478] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_spawn.py\n'}
+[1.562567] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_set_pen.py\n'}
+[1.562655] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_teleport_absolute_s.c\n'}
+[1.562744] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_set_pen_s.c\n'}
+[1.562831] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/__init__.py\n'}
+[1.562919] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_teleport_absolute.py\n'}
+[1.563009] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_kill_s.c\n'}
+[1.563097] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_teleport_relative.py\n'}
+[1.563184] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_spawn_s.c\n'}
+[1.563271] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv/_teleport_relative_s.c\n'}
+[1.563386] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/libturtlesim__rosidl_generator_py.so\n'}
+[1.563477] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/_turtlesim_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[1.563566] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.563655] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/_turtlesim_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[1.563745] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/__init__.py\n'}
+[1.563953] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.564068] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg\n'}
+[1.564160] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg/_pose.py\n'}
+[1.564356] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg/_pose_s.c\n'}
+[1.564651] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg/_color_s.c\n'}
+[1.564935] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg/__init__.py\n'}
+[1.565216] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg/_color.py\n'}
+[1.565501] (lab01_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.565983] (lab01_pkg) StdoutLine: {'line': b'writing ../../build/lab01_pkg/lab01_pkg.egg-info/PKG-INFO\n'}
+[1.566344] (lab01_pkg) StdoutLine: {'line': b'writing dependency_links to ../../build/lab01_pkg/lab01_pkg.egg-info/dependency_links.txt\n'}
+[1.566640] (lab01_pkg) StdoutLine: {'line': b'writing entry points to ../../build/lab01_pkg/lab01_pkg.egg-info/entry_points.txt\n'}
+[1.566927] (lab01_pkg) StdoutLine: {'line': b'writing requirements to ../../build/lab01_pkg/lab01_pkg.egg-info/requires.txt\n'}
+[1.567346] (lab01_pkg) StdoutLine: {'line': b'writing top-level names to ../../build/lab01_pkg/lab01_pkg.egg-info/top_level.txt\n'}
+[1.567459] (lab01_pkg) StdoutLine: {'line': b"reading manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'\n"}
+[1.567552] (lab01_pkg) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.567836] (lab01_pkg) StdoutLine: {'line': b"writing manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'\n"}
+[1.568115] (lab01_pkg) StdoutLine: {'line': b'running build\n'}
+[1.568506] (lab01_pkg) StdoutLine: {'line': b'running build_py\n'}
+[1.568612] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/reset_node.py -> /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.568706] (lab01_pkg) StdoutLine: {'line': b'running install\n'}
+[1.568794] (lab01_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[1.569836] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg/reset_node.py -> /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.570968] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/reset_node.py to reset_node.cpython-310.pyc\n'}
+[1.571836] (lab01_pkg) StdoutLine: {'line': b'running install_data\n'}
+[1.572238] (lab01_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.574952] (lab01_pkg) StdoutLine: {'line': b"removing '/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[1.575496] (lab01_pkg) StdoutLine: {'line': b'Copying ../../build/lab01_pkg/lab01_pkg.egg-info to /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info\n'}
+[1.577840] (lab01_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[1.606081] (turtlesim) StdoutLine: {'line': b"Listing '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim'...\n"}
+[1.606402] (turtlesim) StdoutLine: {'line': b"Listing '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/action'...\n"}
+[1.606635] (turtlesim) StdoutLine: {'line': b"Listing '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/msg'...\n"}
+[1.606792] (turtlesim) StdoutLine: {'line': b"Listing '/home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/srv'...\n"}
+[1.615164] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.615447] (-) TimerEvent: {}
+[1.616286] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.617469] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/local/lib/python3.10/dist-packages/turtlesim/turtlesim_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[1.618344] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/libturtlesim__rosidl_generator_py.so\n'}
+[1.618995] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/action/RotateAbsolute.idl\n'}
+[1.620114] (lab01_pkg) StdoutLine: {'line': b'Installing controller script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.620863] (lab01_pkg) StdoutLine: {'line': b'Installing listener script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.621332] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/msg/Color.idl\n'}
+[1.623470] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/msg/Pose.idl\n'}
+[1.624798] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Kill.idl\n'}
+[1.625441] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/SetPen.idl\n'}
+[1.625729] (lab01_pkg) StdoutLine: {'line': b'Installing localization script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.626452] (lab01_pkg) StdoutLine: {'line': b'Installing reset script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.626808] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Spawn.idl\n'}
+[1.627385] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportAbsolute.idl\n'}
+[1.627865] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportRelative.idl\n'}
+[1.628320] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/action/RotateAbsolute.action\n'}
+[1.628766] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/msg/Color.msg\n'}
+[1.629240] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/msg/Pose.msg\n'}
+[1.630085] (lab01_pkg) StdoutLine: {'line': b'Installing talker script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.630545] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Kill.srv\n'}
+[1.631020] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Kill_Request.msg\n'}
+[1.631500] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Kill_Response.msg\n'}
+[1.632861] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/SetPen.srv\n'}
+[1.633294] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/SetPen_Request.msg\n'}
+[1.633796] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/SetPen_Response.msg\n'}
+[1.635010] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Spawn.srv\n'}
+[1.635727] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Spawn_Request.msg\n'}
+[1.636326] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/Spawn_Response.msg\n'}
+[1.636626] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportAbsolute.srv\n'}
+[1.636916] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportAbsolute_Request.msg\n'}
+[1.637135] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportAbsolute_Response.msg\n'}
+[1.637305] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportRelative.srv\n'}
+[1.637464] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportRelative_Request.msg\n'}
+[1.637612] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/srv/TeleportRelative_Response.msg\n'}
+[1.637758] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/turtlesim/turtlesim_node\n'}
+[1.637892] (lab01_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/lincunha/lab01/build/lab01_pkg/install.log'\n"}
+[1.638011] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/turtlesim/turtle_teleop_key\n'}
+[1.638123] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/turtlesim/draw_square\n'}
+[1.638247] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/lib/turtlesim/mimic\n'}
+[1.638367] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images\n'}
+[1.638488] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/galactic.png\n'}
+[1.638607] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/crystal.png\n'}
+[1.638773] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/dashing.png\n'}
+[1.639486] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/humble.png\n'}
+[1.639972] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/bouncy.png\n'}
+[1.641796] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/rolling.png\n'}
+[1.644004] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/ardent.png\n'}
+[1.644724] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/foxy.png\n'}
+[1.646856] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/images/eloquent.png\n'}
+[1.648298] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/launch\n'}
+[1.649213] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/launch/multisim.launch.py\n'}
+[1.649838] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/ament_index/resource_index/package_run_dependencies/turtlesim\n'}
+[1.652114] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/ament_index/resource_index/parent_prefix_path/turtlesim\n'}
+[1.652888] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/ament_prefix_path.sh\n'}
+[1.653464] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/ament_prefix_path.dsv\n'}
+[1.654994] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/path.sh\n'}
+[1.655929] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/environment/path.dsv\n'}
+[1.656652] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/local_setup.bash\n'}
+[1.657002] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/local_setup.sh\n'}
+[1.657335] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/local_setup.zsh\n'}
+[1.657670] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/local_setup.dsv\n'}
+[1.658235] (turtlesim) StdoutLine: {'line': b'-- Installing: /home/lincunha/lab01/install/turtlesim/share/turtlesim/package.dsv\n'}
+[1.658611] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/ament_index/resource_index/packages/turtlesim\n'}
+[1.658946] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_generator_cExport.cmake\n'}
+[1.659332] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.660045] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[1.661103] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[1.661480] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_generator_cppExport.cmake\n'}
+[1.662582] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[1.663380] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[1.663806] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.664143] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.664592] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_cExport.cmake\n'}
+[1.665047] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.665396] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.665737] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.666085] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_cppExport.cmake\n'}
+[1.666417] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesim__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.666683] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_generator_pyExport.cmake\n'}
+[1.666941] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/export_turtlesim__rosidl_generator_pyExport-noconfig.cmake\n'}
+[1.667210] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/rosidl_cmake-extras.cmake\n'}
+[1.667664] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.668109] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.668434] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.668712] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.668983] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.669350] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.669659] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesimConfig.cmake\n'}
+[1.670222] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/cmake/turtlesimConfig-version.cmake\n'}
+[1.670515] (turtlesim) StdoutLine: {'line': b'-- Up-to-date: /home/lincunha/lab01/install/turtlesim/share/turtlesim/package.xml\n'}
+[1.670902] (turtlesim) CommandEnded: {'returncode': 0}
+[1.695345] (lab01_pkg) CommandEnded: {'returncode': 0}
+[1.714037] (lab01_pkg) JobEnded: {'identifier': 'lab01_pkg', 'rc': 0}
+[1.715653] (-) TimerEvent: {}
+[1.817136] (-) TimerEvent: {}
+[1.918400] (-) TimerEvent: {}
+[2.019812] (-) TimerEvent: {}
+[2.092988] (turtlesim) JobEnded: {'identifier': 'turtlesim', 'rc': 0}
+[2.096361] (-) EventReactorShutdown: {}

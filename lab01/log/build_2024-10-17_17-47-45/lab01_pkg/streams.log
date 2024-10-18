@@ -1,0 +1,27 @@
+[1.172s] Invoking command in '/home/lincunha/lab01/src/lab01_pkg': PYTHONPATH=/home/lincunha/lab01/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab01_pkg build --build-base /home/lincunha/lab01/build/lab01_pkg/build install --record /home/lincunha/lab01/build/lab01_pkg/install.log --single-version-externally-managed install_data
+[1.622s] running egg_info
+[1.624s] writing ../../build/lab01_pkg/lab01_pkg.egg-info/PKG-INFO
+[1.625s] writing dependency_links to ../../build/lab01_pkg/lab01_pkg.egg-info/dependency_links.txt
+[1.625s] writing entry points to ../../build/lab01_pkg/lab01_pkg.egg-info/entry_points.txt
+[1.626s] writing requirements to ../../build/lab01_pkg/lab01_pkg.egg-info/requires.txt
+[1.627s] writing top-level names to ../../build/lab01_pkg/lab01_pkg.egg-info/top_level.txt
+[1.632s] reading manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.633s] adding license file 'LICENSE'
+[1.634s] writing manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.635s] running build
+[1.635s] running build_py
+[1.636s] copying lab01_pkg/controller.py -> /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg
+[1.636s] running install
+[1.637s] running install_lib
+[1.639s] copying /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg/controller.py -> /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.641s] byte-compiling /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller.py to controller.cpython-310.pyc
+[1.642s] running install_data
+[1.642s] running install_egg_info
+[1.646s] removing '/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.647s] Copying ../../build/lab01_pkg/lab01_pkg.egg-info to /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info
+[1.648s] running install_scripts
+[1.694s] Installing controller script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.695s] Installing listener script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.695s] Installing talker script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.698s] writing list of installed files to '/home/lincunha/lab01/build/lab01_pkg/install.log'
+[1.760s] Invoked command in '/home/lincunha/lab01/src/lab01_pkg' returned '0': PYTHONPATH=/home/lincunha/lab01/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab01_pkg build --build-base /home/lincunha/lab01/build/lab01_pkg/build install --record /home/lincunha/lab01/build/lab01_pkg/install.log --single-version-externally-managed install_data

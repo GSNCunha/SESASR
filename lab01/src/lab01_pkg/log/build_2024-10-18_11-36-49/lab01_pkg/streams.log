@@ -1,0 +1,62 @@
+[0.844s] Invoking command in '/home/lincunha/SESASR/lab01/src/lab01_pkg': PYTHONPATH=/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/lab01_pkg build --build-base /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build install --record /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/install.log --single-version-externally-managed install_data
+[1.145s] running egg_info
+[1.147s] creating build/lab01_pkg/lab01_pkg.egg-info
+[1.147s] writing build/lab01_pkg/lab01_pkg.egg-info/PKG-INFO
+[1.148s] writing dependency_links to build/lab01_pkg/lab01_pkg.egg-info/dependency_links.txt
+[1.148s] writing entry points to build/lab01_pkg/lab01_pkg.egg-info/entry_points.txt
+[1.149s] writing requirements to build/lab01_pkg/lab01_pkg.egg-info/requires.txt
+[1.149s] writing top-level names to build/lab01_pkg/lab01_pkg.egg-info/top_level.txt
+[1.149s] writing manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.152s] reading manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.153s] adding license file 'LICENSE'
+[1.153s] writing manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.154s] running build
+[1.154s] running build_py
+[1.154s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build
+[1.155s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib
+[1.155s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.155s] copying lab01_pkg/controller.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.156s] copying lab01_pkg/controller_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.156s] copying lab01_pkg/localization_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.157s] copying lab01_pkg/__init__.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.157s] copying lab01_pkg/localization.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.158s] copying lab01_pkg/subscriber_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.158s] copying lab01_pkg/publisher_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.159s] copying lab01_pkg/reset_node.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg
+[1.160s] running install
+[1.161s] running install_lib
+[1.162s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.162s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/controller.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.163s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/controller_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.163s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/localization_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.164s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/__init__.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.164s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/localization.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.165s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/subscriber_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.165s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/publisher_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.165s] copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/reset_node.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.165s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller.py to controller.cpython-310.pyc
+[1.166s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller_reset.py to controller_reset.cpython-310.pyc
+[1.167s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/localization_reset.py to localization_reset.cpython-310.pyc
+[1.168s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/__init__.py to __init__.cpython-310.pyc
+[1.168s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/localization.py to localization.cpython-310.pyc
+[1.169s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc
+[1.170s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/publisher_member_function.py to publisher_member_function.cpython-310.pyc
+[1.170s] byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/reset_node.py to reset_node.cpython-310.pyc
+[1.171s] running install_data
+[1.171s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index
+[1.171s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index
+[1.172s] creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index/packages
+[1.172s] copying resource/lab01_pkg -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index/packages
+[1.172s] copying package.xml -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/lab01_pkg
+[1.173s] running install_egg_info
+[1.175s] Copying build/lab01_pkg/lab01_pkg.egg-info to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info
+[1.177s] running install_scripts
+[1.207s] Installing controller script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.208s] Installing controller_reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.208s] Installing listener script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.208s] Installing localization script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.209s] Installing localization_reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.209s] Installing reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.209s] Installing talker script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg
+[1.210s] writing list of installed files to '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/install.log'
+[1.251s] Invoked command in '/home/lincunha/SESASR/lab01/src/lab01_pkg' returned '0': PYTHONPATH=/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base build/lab01_pkg build --build-base /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build install --record /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/install.log --single-version-externally-managed install_data

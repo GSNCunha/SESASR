@@ -1,0 +1,79 @@
+[0.000000] (-) TimerEvent: {}
+[0.000777] (lab01_pkg) JobQueued: {'identifier': 'lab01_pkg', 'dependencies': OrderedDict()}
+[0.000893] (lab01_pkg) JobStarted: {'identifier': 'lab01_pkg'}
+[0.098468] (-) TimerEvent: {}
+[0.206134] (-) TimerEvent: {}
+[0.312584] (-) TimerEvent: {}
+[0.413436] (-) TimerEvent: {}
+[0.514360] (-) TimerEvent: {}
+[0.618264] (-) TimerEvent: {}
+[0.718835] (-) TimerEvent: {}
+[0.819856] (-) TimerEvent: {}
+[0.838812] (lab01_pkg) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', 'build/lab01_pkg', 'build', '--build-base', '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build', 'install', '--record', '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/lincunha/SESASR/lab01/src/lab01_pkg', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'lincunha', 'GIT_ASKPASS': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'update-motd', 'HOME': '/home/lincunha', 'OLDPWD': '/home/lincunha/SESASR/lab01/src', 'TERM_PROGRAM_VERSION': '1.94.2', 'VSCODE_IPC_HOOK_CLI': '/run/user/1000/vscode-ipc-bea12718-2d04-480f-bd76-b12f2e5d63c5.sock', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/node', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WSL_DISTRO_NAME': 'Ubuntu-22.04', 'WAYLAND_DISPLAY': 'wayland-0', 'ROS_DISTRO': 'humble', 'LOGNAME': 'lincunha', 'NAME': 'Sadigursky', 'WSL_INTEROP': '/run/WSL/335_interop', 'PULSE_SERVER': 'unix:/mnt/wslg/PulseServer', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/lincunha/.vscode-server/bin/384ff7382de624fb94dbaf6da11977bba1ecd427/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/VMware/VMware Workstation/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/dotnet/:/mnt/d/Programas/runtime/win64:/mnt/d/Programas/bin:/mnt/d/bin:/mnt/d/Programas/polyspace/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/PuTTY/:/mnt/d/runtime/win64:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python312/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/Scripts/:/mnt/c/Users/Gabri/AppData/Local/Programs/Python/Python39-32/:/mnt/c/Users/Gabri/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Gabri/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin', 'XDG_RUNTIME_DIR': '/run/user/1000/', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-051701a8f6.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/opt/ros/humble', 'SHELL': '/bin/bash', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'COLCON': '1', 'WSL2_GUI_APPS_ENABLED': '1', 'HOSTTYPE': 'x86_64', 'WSLENV': 'VSCODE_WSL_EXT_LOCATION/up'}, 'shell': False}
+[0.922264] (-) TimerEvent: {}
+[1.023813] (-) TimerEvent: {}
+[1.125532] (-) TimerEvent: {}
+[1.145940] (lab01_pkg) StdoutLine: {'line': b'running egg_info\n'}
+[1.147458] (lab01_pkg) StdoutLine: {'line': b'creating build/lab01_pkg/lab01_pkg.egg-info\n'}
+[1.148219] (lab01_pkg) StdoutLine: {'line': b'writing build/lab01_pkg/lab01_pkg.egg-info/PKG-INFO\n'}
+[1.148657] (lab01_pkg) StdoutLine: {'line': b'writing dependency_links to build/lab01_pkg/lab01_pkg.egg-info/dependency_links.txt\n'}
+[1.149018] (lab01_pkg) StdoutLine: {'line': b'writing entry points to build/lab01_pkg/lab01_pkg.egg-info/entry_points.txt\n'}
+[1.149315] (lab01_pkg) StdoutLine: {'line': b'writing requirements to build/lab01_pkg/lab01_pkg.egg-info/requires.txt\n'}
+[1.149553] (lab01_pkg) StdoutLine: {'line': b'writing top-level names to build/lab01_pkg/lab01_pkg.egg-info/top_level.txt\n'}
+[1.150098] (lab01_pkg) StdoutLine: {'line': b"writing manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'\n"}
+[1.152699] (lab01_pkg) StdoutLine: {'line': b"reading manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'\n"}
+[1.153455] (lab01_pkg) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[1.154157] (lab01_pkg) StdoutLine: {'line': b"writing manifest file 'build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'\n"}
+[1.154386] (lab01_pkg) StdoutLine: {'line': b'running build\n'}
+[1.154561] (lab01_pkg) StdoutLine: {'line': b'running build_py\n'}
+[1.154946] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build\n'}
+[1.155773] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib\n'}
+[1.155980] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.156112] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/controller.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.156555] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/controller_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.157176] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/localization_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.157798] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/__init__.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.158325] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/localization.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.158618] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/subscriber_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.159209] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/publisher_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.159809] (lab01_pkg) StdoutLine: {'line': b'copying lab01_pkg/reset_node.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg\n'}
+[1.160803] (lab01_pkg) StdoutLine: {'line': b'running install\n'}
+[1.161428] (lab01_pkg) StdoutLine: {'line': b'running install_lib\n'}
+[1.162444] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.163217] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/controller.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.163692] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/controller_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.163923] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/localization_reset.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.164325] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/__init__.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.164952] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/localization.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.165319] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/subscriber_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.165943] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/publisher_member_function.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.166169] (lab01_pkg) StdoutLine: {'line': b'copying /home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/build/lib/lab01_pkg/reset_node.py -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg\n'}
+[1.166283] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller.py to controller.cpython-310.pyc\n'}
+[1.166663] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller_reset.py to controller_reset.cpython-310.pyc\n'}
+[1.167627] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/localization_reset.py to localization_reset.cpython-310.pyc\n'}
+[1.168500] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/__init__.py to __init__.cpython-310.pyc\n'}
+[1.169038] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/localization.py to localization.cpython-310.pyc\n'}
+[1.169834] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/subscriber_member_function.py to subscriber_member_function.cpython-310.pyc\n'}
+[1.170403] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/publisher_member_function.py to publisher_member_function.cpython-310.pyc\n'}
+[1.171060] (lab01_pkg) StdoutLine: {'line': b'byte-compiling /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/reset_node.py to reset_node.cpython-310.pyc\n'}
+[1.171835] (lab01_pkg) StdoutLine: {'line': b'running install_data\n'}
+[1.172015] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index\n'}
+[1.172245] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index\n'}
+[1.172615] (lab01_pkg) StdoutLine: {'line': b'creating /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index/packages\n'}
+[1.173034] (lab01_pkg) StdoutLine: {'line': b'copying resource/lab01_pkg -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/ament_index/resource_index/packages\n'}
+[1.173284] (lab01_pkg) StdoutLine: {'line': b'copying package.xml -> /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/share/lab01_pkg\n'}
+[1.173569] (lab01_pkg) StdoutLine: {'line': b'running install_egg_info\n'}
+[1.175960] (lab01_pkg) StdoutLine: {'line': b'Copying build/lab01_pkg/lab01_pkg.egg-info to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info\n'}
+[1.177388] (lab01_pkg) StdoutLine: {'line': b'running install_scripts\n'}
+[1.207721] (lab01_pkg) StdoutLine: {'line': b'Installing controller script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.208427] (lab01_pkg) StdoutLine: {'line': b'Installing controller_reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.208915] (lab01_pkg) StdoutLine: {'line': b'Installing listener script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.209084] (lab01_pkg) StdoutLine: {'line': b'Installing localization script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.209695] (lab01_pkg) StdoutLine: {'line': b'Installing localization_reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.209851] (lab01_pkg) StdoutLine: {'line': b'Installing reset script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.209973] (lab01_pkg) StdoutLine: {'line': b'Installing talker script to /home/lincunha/SESASR/lab01/src/lab01_pkg/install/lab01_pkg/lib/lab01_pkg\n'}
+[1.210385] (lab01_pkg) StdoutLine: {'line': b"writing list of installed files to '/home/lincunha/SESASR/lab01/src/lab01_pkg/build/lab01_pkg/install.log'\n"}
+[1.226847] (-) TimerEvent: {}
+[1.251701] (lab01_pkg) CommandEnded: {'returncode': 0}
+[1.268048] (lab01_pkg) JobEnded: {'identifier': 'lab01_pkg', 'rc': 0}
+[1.269171] (-) EventReactorShutdown: {}

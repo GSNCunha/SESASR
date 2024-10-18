@@ -1,0 +1,34 @@
+[1.065s] Invoking command in '/home/lincunha/lab01/src/lab01_pkg': PYTHONPATH=/home/lincunha/lab01/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab01_pkg build --build-base /home/lincunha/lab01/build/lab01_pkg/build install --record /home/lincunha/lab01/build/lab01_pkg/install.log --single-version-externally-managed install_data
+[1.530s] running egg_info
+[1.532s] writing ../../build/lab01_pkg/lab01_pkg.egg-info/PKG-INFO
+[1.533s] writing dependency_links to ../../build/lab01_pkg/lab01_pkg.egg-info/dependency_links.txt
+[1.533s] writing entry points to ../../build/lab01_pkg/lab01_pkg.egg-info/entry_points.txt
+[1.534s] writing requirements to ../../build/lab01_pkg/lab01_pkg.egg-info/requires.txt
+[1.534s] writing top-level names to ../../build/lab01_pkg/lab01_pkg.egg-info/top_level.txt
+[1.537s] reading manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.538s] adding license file 'LICENSE'
+[1.539s] writing manifest file '../../build/lab01_pkg/lab01_pkg.egg-info/SOURCES.txt'
+[1.540s] running build
+[1.540s] running build_py
+[1.541s] copying lab01_pkg/controller_reset.py -> /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg
+[1.541s] copying lab01_pkg/reset_node.py -> /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg
+[1.541s] running install
+[1.542s] running install_lib
+[1.544s] copying /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg/controller_reset.py -> /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.544s] copying /home/lincunha/lab01/build/lab01_pkg/build/lib/lab01_pkg/reset_node.py -> /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg
+[1.546s] byte-compiling /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/controller_reset.py to controller_reset.cpython-310.pyc
+[1.547s] byte-compiling /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg/reset_node.py to reset_node.cpython-310.pyc
+[1.549s] running install_data
+[1.549s] running install_egg_info
+[1.552s] removing '/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.553s] Copying ../../build/lab01_pkg/lab01_pkg.egg-info to /home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages/lab01_pkg-0.0.0-py3.10.egg-info
+[1.555s] running install_scripts
+[1.607s] Installing controller script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.607s] Installing controller_reset script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.608s] Installing listener script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.608s] Installing localization script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.609s] Installing localization_reset script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.610s] Installing reset script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.611s] Installing talker script to /home/lincunha/lab01/install/lab01_pkg/lib/lab01_pkg
+[1.624s] writing list of installed files to '/home/lincunha/lab01/build/lab01_pkg/install.log'
+[1.718s] Invoked command in '/home/lincunha/lab01/src/lab01_pkg' returned '0': PYTHONPATH=/home/lincunha/lab01/build/lab01_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/lab01/install/lab01_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab01_pkg build --build-base /home/lincunha/lab01/build/lab01_pkg/build install --record /home/lincunha/lab01/build/lab01_pkg/install.log --single-version-externally-managed install_data
