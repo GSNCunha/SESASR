@@ -1,0 +1,20 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing lab02_pkg.egg-info/PKG-INFO
+writing dependency_links to lab02_pkg.egg-info/dependency_links.txt
+writing entry points to lab02_pkg.egg-info/entry_points.txt
+writing requirements to lab02_pkg.egg-info/requires.txt
+writing top-level names to lab02_pkg.egg-info/top_level.txt
+reading manifest file 'lab02_pkg.egg-info/SOURCES.txt'
+writing manifest file 'lab02_pkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02-pkg.egg-link (link to .)
+Installing listener script to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/lab02_pkg
+Installing talker script to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/lab02_pkg
+
+Installed /home/lincunha/SESASR/lab02/build/lab02_pkg
+running symlink_data
+symbolically linking /home/lincunha/SESASR/lab02/build/lab02_pkg/resource/lab02_pkg -> /home/lincunha/SESASR/lab02/install/lab02_pkg/share/ament_index/resource_index/packages
+symbolically linking /home/lincunha/SESASR/lab02/build/lab02_pkg/package.xml -> /home/lincunha/SESASR/lab02/install/lab02_pkg/share/lab02_pkg
