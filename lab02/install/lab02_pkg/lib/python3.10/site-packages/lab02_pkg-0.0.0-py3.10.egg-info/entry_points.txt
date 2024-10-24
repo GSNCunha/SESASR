@@ -1,4 +1,5 @@
 [console_scripts]
+controller = lab02_pkg.controller:main
 listener = lab02_pkg.subscriber_member_function:main
 talker = lab02_pkg.publisher_member_function:main
 

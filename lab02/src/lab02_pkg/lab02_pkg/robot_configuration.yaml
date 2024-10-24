@@ -1,0 +1,10 @@
+# All characters after ‘#’ are comments
+# Pay attention to the file indentation. It is important as in Python scripts.
+robot_driver_node:  # node name
+  ros__parameters:  # mandatory after the node name
+    # dictionary of key-value pairs
+    speed: 2.0
+    max_turn_rate: 1.5
+    robot_name: "Turtlebot"
+    sensor_ids: [1, 2, 3]
+    is_active: true

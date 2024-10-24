@@ -1,0 +1,5 @@
+  File "/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg/controller.py", line 56
+    if msg_scan.range[0] < 0.20
+                               ^
+SyntaxError: expected ':'
+

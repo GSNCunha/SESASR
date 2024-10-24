@@ -10,3 +10,20 @@ class MinimalParam(rclpy.node.Node):
         
         self.declare_parameter('param2', '2.0')
         param2 = self.get_parameter('param2').get_parameter_value().double_value
+        
+#/odom
+
+def main(args=None):
+    rclpy.init(args=args)
+
+    minimal_param = MinimalParam()
+
+    rclpy.spin(minimal_param)
+
+    minimal_param.destroy_node()
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
+

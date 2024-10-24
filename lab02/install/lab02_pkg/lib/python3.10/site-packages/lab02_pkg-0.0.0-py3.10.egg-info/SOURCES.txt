@@ -10,6 +10,7 @@ setup.py
 ../../build/lab02_pkg/lab02_pkg.egg-info/top_level.txt
 ../../build/lab02_pkg/lab02_pkg.egg-info/zip-safe
 lab02_pkg/__init__.py
+lab02_pkg/controller.py
 lab02_pkg/parameter_node.py
 lab02_pkg/publisher_member_function.py
 lab02_pkg/subscriber_member_function.py

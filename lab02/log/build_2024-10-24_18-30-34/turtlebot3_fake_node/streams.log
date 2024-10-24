@@ -1,0 +1,31 @@
+[0.152s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_fake_node -- -j8 -l8
+[0.426s] [100%] Built target turtlebot3_fake_node
+[2.056s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_fake_node -- -j8 -l8
+[2.234s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_fake_node
+[2.285s] -- Install configuration: ""
+[2.285s] -- Execute custom install script
+[2.296s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/lib/turtlebot3_fake_node/turtlebot3_fake_node
+[2.297s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/rviz2.launch.py
+[2.301s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/launch/turtlebot3_fake_node.launch.py
+[2.302s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/burger.yaml
+[2.303s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle.yaml
+[2.303s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/param/waffle_pi.yaml
+[2.308s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/include//turtlebot3_fake_node/turtlebot3_fake_node.hpp
+[2.313s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/ament_index/resource_index/package_run_dependencies/turtlebot3_fake_node
+[2.314s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/ament_index/resource_index/parent_prefix_path/turtlebot3_fake_node
+[2.315s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.sh
+[2.316s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/ament_prefix_path.dsv
+[2.319s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.sh
+[2.319s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/environment/path.dsv
+[2.341s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.bash
+[2.342s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.sh
+[2.344s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.zsh
+[2.361s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/local_setup.dsv
+[2.377s] -- Symlinking: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.dsv
+[2.438s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/ament_index/resource_index/packages/turtlebot3_fake_node
+[2.440s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.459s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.461s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig.cmake
+[2.461s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/cmake/turtlebot3_fake_nodeConfig-version.cmake
+[2.462s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_fake_node/share/turtlebot3_fake_node/package.xml
+[2.467s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_fake_node
