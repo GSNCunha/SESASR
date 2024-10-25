@@ -1,0 +1,21 @@
+[0.103s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_simulations': CMAKE_PREFIX_PATH=/home/lincunha/SESASR/lab02/install/turtlebot3_gazebo:/home/lincunha/SESASR/lab02/install/turtlebot3_fake_node:/home/lincunha/SESASR/lab02/install/turtlebot3_simulations:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_simulations -- -j8 -l8
+[0.159s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_simulations' returned '0': CMAKE_PREFIX_PATH=/home/lincunha/SESASR/lab02/install/turtlebot3_gazebo:/home/lincunha/SESASR/lab02/install/turtlebot3_fake_node:/home/lincunha/SESASR/lab02/install/turtlebot3_simulations:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_simulations -- -j8 -l8
+[0.198s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_simulations': CMAKE_PREFIX_PATH=/home/lincunha/SESASR/lab02/install/turtlebot3_gazebo:/home/lincunha/SESASR/lab02/install/turtlebot3_fake_node:/home/lincunha/SESASR/lab02/install/turtlebot3_simulations:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_simulations
+[0.208s] -- Install configuration: ""
+[0.208s] -- Execute custom install script
+[0.209s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/ament_index/resource_index/package_run_dependencies/turtlebot3_simulations
+[0.209s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/ament_index/resource_index/parent_prefix_path/turtlebot3_simulations
+[0.210s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/ament_prefix_path.sh
+[0.210s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/ament_prefix_path.dsv
+[0.210s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/path.sh
+[0.211s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/path.dsv
+[0.211s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.bash
+[0.212s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.sh
+[0.212s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.zsh
+[0.212s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.dsv
+[0.212s] -- Symlinking: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/package.dsv
+[0.226s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/ament_index/resource_index/packages/turtlebot3_simulations
+[0.226s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/cmake/turtlebot3_simulationsConfig.cmake
+[0.226s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/cmake/turtlebot3_simulationsConfig-version.cmake
+[0.227s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_simulations/share/turtlebot3_simulations/package.xml
+[0.231s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_simulations' returned '0': CMAKE_PREFIX_PATH=/home/lincunha/SESASR/lab02/install/turtlebot3_gazebo:/home/lincunha/SESASR/lab02/install/turtlebot3_fake_node:/home/lincunha/SESASR/lab02/install/turtlebot3_simulations:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_simulations
