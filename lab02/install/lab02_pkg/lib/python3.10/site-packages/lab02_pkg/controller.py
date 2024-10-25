@@ -38,19 +38,42 @@ class Controller(Node):
 
     def scan_callback(self, msg):
         # Handle LaserScan message
+
+        def radians_to_go(initial_angle, actual_angle, side_of_turn):
+            if side_of_turn == "left":
+                if initial_angle > (3 * math.pi / 2):
+                    if actual_angle > (3 * math.pi / 2):
+                        return math.pi / 2 - (actual_angle - initial_angle)
+                    else:
+                        return math.pi / 2 - (2 * math.pi - initial_angle) - actual_angle
+                else:
+                    return initial_angle + math.pi / 2 - actual_angle
+            elif side_of_turn == "right":
+                if initial_angle < (math.pi / 2):
+                    if actual_angle < (math.pi / 2):
+                        return math.pi / 2 - (initial_angle - actual_angle)
+                    else:
+                        return math.pi / 2 - initial_angle - (2 * math.pi - actual_angle)
+                return actual_angle - (initial_angle - math.pi / 2)
+            return 0.0  # Default value as a float
+
+            
         msg_control_velocity = Twist()
         msg_get_position = Odometry()
         if self.left_turn == 1 or self.right_turn == 1:
             if self.left_turn == 1:
-                if self.angle < (self.actual_angle + math.pi/2):
+                radians = radians_to_go(self.actual_angle, self.angle, "left")
+                self.get_logger().info(f'Radians "{radians}" actual angle "{self.angle}"')
+                if radians > 0:
                     msg_control_velocity.angular.z = 0.5
-                elif self.angle >= (self.actual_angle + math.pi/2):
+                else:
                     msg_control_velocity.angular.z = 0.0
                     self.left_turn = 0
             if self.right_turn == 1:
-                if self.angle > (self.actual_angle - math.pi/2):
+                radians = radians_to_go(self.actual_angle, self.angle, "right")
+                if radians > 0:
                     msg_control_velocity.angular.z = -0.5
-                elif self.angle <= (self.actual_angle - math.pi/2):
+                else:
                     msg_control_velocity.angular.z = 0.0
                     self.right_turn = 0
 
