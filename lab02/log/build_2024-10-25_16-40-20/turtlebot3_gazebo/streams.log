@@ -1,0 +1,92 @@
+[0.221s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_gazebo -- -j8 -l8
+[2.684s] [ 25%] Built target turtlebot3_drive
+[2.704s] [ 50%] Built target obstacle1
+[2.708s] [ 75%] Built target obstacle2
+[2.720s] [100%] Built target obstacles
+[2.724s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --build /home/lincunha/SESASR/lab02/build/turtlebot3_gazebo -- -j8 -l8
+[3.025s] Invoking command in '/home/lincunha/SESASR/lab02/build/turtlebot3_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_gazebo
+[3.070s] -- Install configuration: ""
+[3.126s] -- Execute custom install script
+[3.138s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/lib/turtlebot3_gazebo/turtlebot3_drive
+[3.144s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/empty_world.launch.py
+[3.155s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/lab02.launch.py
+[3.156s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/robot_state_publisher.launch.py
+[3.156s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/spawn_turtlebot3.launch.py
+[3.156s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage1.launch.py
+[3.157s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage2.launch.py
+[3.157s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage3.launch.py
+[3.158s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_dqn_stage4.launch.py
+[3.159s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_house.launch.py
+[3.161s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//launch/turtlebot3_world.launch.py
+[3.162s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model-1_4.sdf
+[3.163s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.config
+[3.166s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_burger/model.sdf
+[3.173s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/burger_base.dae
+[3.175s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/lds.dae
+[3.182s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/r200.dae
+[3.184s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/tire.dae
+[3.189s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_base.dae
+[3.191s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/meshes/waffle_pi_base.dae
+[3.194s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_common/model.config
+[3.196s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.config
+[3.197s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/goal_box/model.sdf
+[3.198s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.config
+[3.199s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/inner_walls/model.sdf
+[3.201s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.config
+[3.204s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/model.sdf
+[3.206s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.config
+[3.209s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle1/model.sdf
+[3.209s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.config
+[3.210s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle2/model.sdf
+[3.211s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/CMakeLists.txt
+[3.212s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacle1.cc
+[3.212s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacle2.cc
+[3.213s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacle_plugin/obstacles.cc
+[3.214s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.config
+[3.215s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_dqn_world/obstacles/model.sdf
+[3.216s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.config
+[3.217s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_house/model.sdf
+[3.217s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model-1_4.sdf
+[3.225s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.config
+[3.235s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle/model.sdf
+[3.236s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model-1_4_.sdf
+[3.237s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.config
+[3.238s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_waffle_pi/model.sdf
+[3.240s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/hexagon.dae
+[3.249s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/meshes/wall.dae
+[3.250s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model-1_4.sdf
+[3.252s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.config
+[3.260s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//models/turtlebot3_world/model.sdf
+[3.271s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//rviz/tb3_gazebo.rviz
+[3.272s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/common_properties.urdf
+[3.273s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_burger.urdf
+[3.274s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle.urdf
+[3.276s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//urdf/turtlebot3_waffle_pi.urdf
+[3.283s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/empty_world.world
+[3.296s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/maze.world
+[3.304s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage1.world
+[3.305s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage2.world
+[3.306s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage3.world
+[3.307s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_dqn_stage4.world
+[3.308s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_house.world
+[3.310s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo//worlds/turtlebot3_world.world
+[3.321s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/include//turtlebot3_gazebo/turtlebot3_drive.hpp
+[3.322s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/turtlebot3_gazebo.dsv
+[3.323s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/ament_index/resource_index/package_run_dependencies/turtlebot3_gazebo
+[3.341s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/ament_index/resource_index/parent_prefix_path/turtlebot3_gazebo
+[3.352s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.sh
+[3.355s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/ament_prefix_path.dsv
+[3.359s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.sh
+[3.362s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/environment/path.dsv
+[3.369s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.bash
+[3.370s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.sh
+[3.371s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.zsh
+[3.371s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/local_setup.dsv
+[3.372s] -- Symlinking: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.dsv
+[3.373s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/ament_index/resource_index/packages/turtlebot3_gazebo
+[3.374s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.376s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.381s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig.cmake
+[3.383s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/cmake/turtlebot3_gazeboConfig-version.cmake
+[3.384s] -- Up-to-date symlink: /home/lincunha/SESASR/lab02/install/turtlebot3_gazebo/share/turtlebot3_gazebo/package.xml
+[3.386s] Invoked command in '/home/lincunha/SESASR/lab02/build/turtlebot3_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/lincunha/SESASR/lab02/install/lab02_pkg:/opt/ros/humble /usr/bin/cmake --install /home/lincunha/SESASR/lab02/build/turtlebot3_gazebo

@@ -1,0 +1,5 @@
+  File "/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg/controller.py", line 175
+    else
+        ^
+SyntaxError: expected ':'
+

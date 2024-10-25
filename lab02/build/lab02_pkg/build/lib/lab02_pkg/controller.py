@@ -26,12 +26,8 @@ class Controller(Node):
 
         self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
         self.timer = self.create_timer(1, self.timer_callback)
-        self.movements = 0
-        self.movements_set = 1
         self.angle = 0
         self.actual_angle = 0
-        self.left_turn = 0
-        self.right_turn = 0
         self.orientation = "East"
         self.location_x = 0.0
         self.location_y = 0.0
@@ -105,89 +101,137 @@ class Controller(Node):
 
         if self.operation_mode.name == "NONE":
             if msg.ranges[90] < 1.5 and msg.ranges[270] < 1.5:
-                self.operation_mode.name = "hallway"
-                self.get_logger().info(f'I am in a Hallway!')
-            elif msg.ranges[90] < 1.5:
-                self.operation_mode.name = "left_saloon"
-            elif msg.ranges[270] < 1.5:
-                self.operation_mode.name = "right_saloon"
+                if msg.ranges[0] > 1:
+                    self.operation_mode.name = "hallway"
+                    self.get_logger().info(f'I am in a Hallway!')
+                else: 
+                    self.operation_mode.name = "dead_end"
+                    self.get_logger().info(f'No way to go! I may go back')
+            elif msg.ranges[90] < 1.5 and msg.ranges[270] > 1.5:
+                if msg.ranges[0] > 3.5:
+                    self.operation_mode.name = "right_saloon"
+                    self.get_logger().info(f'I have a saloon in the right')
+                else:
+                    self.operation_mode.name = "turn_right"
+                    self.actual_angle = self.angle
+                    self.operation_mode.front_length = msg.ranges[0]
+                    self.get_logger().info('I need to turn right!')
+            elif msg.ranges[90] > 1.5 and msg.ranges[270] < 1.5:
+                if msg.ranges[0] > 3.5:
+                    self.operation_mode.name = "left_saloon"
+                    self.get_logger().info(f'I have a saloon in the left')
+                else:
+                    self.operation_mode.name = "turn_left"
+                    self.actual_angle = self.angle
+                    self.operation_mode.front_length = msg.ranges[0]
+                    self.get_logger().info('I need to turn left!')
             else:
-                self.operation_mode.name = "saloon"
+                if msg.ranges[0] < 1:
+                    self.get_logger().info(f'I need to Turn, why not right?')
+                    self.operation_mode.name = "turn_right"
+                    self.actual_angle = self.angle
+                    self.operation_mode.front_length = msg.ranges[0]
+                    self.get_logger().info('I need to turn right!')
+                else:
+                    self.operation_mode.name = "saloon"
+                    self.get_logger().info(f'I am in a saloon')
 
         if self.operation_mode.name == "hallway":
 
             if msg.ranges[90] > 1.5:
                 self.get_logger().info('Left side open!')
-                if msg.ranges[0] < 2.5:
+                if msg.ranges[0] < 3.5:
                     self.operation_mode.name = "turn_left"
                     self.actual_angle = self.angle
-                    self.operation_mode.side_length = msg.ranges[270]
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn left!')
                 else:
+                    self.operation_mode.name = "NONE"
+                    self.operation_mode.go_front = 0.0
+                    self.operation_mode.x_position = 0.0
+                    self.operation_mode.y_position = 0.0
+                    self.operation_mode.front_length = 0.0
+                
                     msg_control_velocity.linear.x = 0.22
 
             elif msg.ranges[270] > 1.5:
                 self.get_logger().info('Right side open!')
-                if msg.ranges[0] < 2.5:
+                if msg.ranges[0] < 3.5:
                     self.operation_mode.name = "turn_right"
                     self.actual_angle = self.angle
-                    self.operation_mode.side_length = msg.ranges[90]
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn right!')
                 else:
+                    self.operation_mode.name = "NONE"
+                    self.operation_mode.go_front = 0.0
+                    self.operation_mode.x_position = 0.0
+                    self.operation_mode.y_position = 0.0
+                    self.operation_mode.front_length = 0.0
+
                     msg_control_velocity.linear.x = 0.22
             else:
-                msg_control_velocity.linear.x = 0.22
+                if msg.ranges[0] > 0.8:
+                    msg_control_velocity.linear.x = 0.22
+                else:
+                    self.operation_mode.name = "NONE"
+                    self.operation_mode.go_front = 0.0
+                    self.operation_mode.x_position = 0.0
+                    self.operation_mode.y_position = 0.0
+                    self.operation_mode.front_length = 0.0
 
 
 
         if self.operation_mode.name == "turn_left":
-            turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.1
+            turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.2
             angular_velocity = math.pi / 2 / turn_time
 
             radians = radians_to_go(self.actual_angle, self.angle, "left")
 
             if radians > 0:
+                if radians < 0.175:
+                    turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.08
+                    angular_velocity = math.pi / 2 / turn_time
+                    msg_control_velocity.angular.z =  angular_velocity
+                    msg_control_velocity.linear.x = 0.08
+
                 msg_control_velocity.angular.z = angular_velocity
-                msg_control_velocity.linear.x = 0.10
+                msg_control_velocity.linear.x = 0.2
             else:
                 change_orientation("left")
-                self.get_logger().info(f'Finish curve! angle= {self.angle}')
+                self.get_logger().info(f'Finish curve! angle= {self.angle*180/(math.pi)}')
 
                 self.operation_mode.name = "go_front"
                 self.get_logger().info(f'Lets go front!')
-                if self.operation_mode.side_length > self.operation_mode.front_length/2:
-                    self.operation_mode.go_front = self.operation_mode.side_length - (self.operation_mode.front_length)/2 + 0.4
-                else:
-                    self.operation_mode.go_front = 0.4
+
+                self.operation_mode.go_front = 0.4
                 self.operation_mode.x_position = self.location_x
                 self.operation_mode.y_position = self.location_y
-                self.operation_mode.side_length = 0.0
                 self.operation_mode.front_length = 0.0
 
         if self.operation_mode.name == "turn_right":
-                    turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.1
+                    turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.2
                     angular_velocity = math.pi / 2 / turn_time
 
                     radians = radians_to_go(self.actual_angle, self.angle, "right")
 
                     if radians > 0:
+                        if radians < 0.175:
+                            turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.08
+                            angular_velocity = math.pi / 2 / turn_time
+                            msg_control_velocity.angular.z = - angular_velocity
+                            msg_control_velocity.linear.x = 0.08
+
                         msg_control_velocity.angular.z = - angular_velocity
-                        msg_control_velocity.linear.x = 0.10
+                        msg_control_velocity.linear.x = 0.2
                     else:
                         change_orientation("right")
-                        self.get_logger().info(f'Finish curve! angle= {self.angle}')
+                        self.get_logger().info(f'Finish curve! angle= {self.angle*180/(math.pi)}')
 
                         self.operation_mode.name = "go_front"
                         self.get_logger().info(f'Lets go front!')
-                        if self.operation_mode.side_length > self.operation_mode.front_length:
-                            self.operation_mode.go_front = self.operation_mode.side_length - self.operation_mode.front_length + 0.2
-                        else:
-                            self.operation_mode.go_front = 0.2
+                        self.operation_mode.go_front = 0.4
                         self.operation_mode.x_position = self.location_x
                         self.operation_mode.y_position = self.location_y
-                        self.operation_mode.side_length = 0.0
                         self.operation_mode.front_length = 0.0
 
 
@@ -200,7 +244,6 @@ class Controller(Node):
                     self.operation_mode.go_front = 0.0
                     self.operation_mode.x_position = 0.0
                     self.operation_mode.y_position = 0.0
-                    self.operation_mode.side_length = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "North":
                 if (self.location_y - self.operation_mode.y_position) < self.operation_mode.go_front:
@@ -210,7 +253,6 @@ class Controller(Node):
                     self.operation_mode.go_front = 0.0
                     self.operation_mode.x_position = 0.0
                     self.operation_mode.y_position = 0.0
-                    self.operation_mode.side_length = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "West":
                 if (self.operation_mode.x_position - self.location_x) < self.operation_mode.go_front:
@@ -220,7 +262,6 @@ class Controller(Node):
                     self.operation_mode.go_front = 0.0
                     self.operation_mode.x_position = 0.0
                     self.operation_mode.y_position = 0.0
-                    self.operation_mode.side_length = 0.0
                     self.operation_mode.front_length = 0.0
 
             if self.orientation == "South":
@@ -231,9 +272,40 @@ class Controller(Node):
                     self.operation_mode.go_front = 0.0
                     self.operation_mode.x_position = 0.0
                     self.operation_mode.y_position = 0.0
-                    self.operation_mode.side_length = 0.0
                     self.operation_mode.front_length = 0.0
 
+        if self.operation_mode.name == "left_saloon":
+            
+            if msg.ranges[90] > 1.5 and msg.ranges[0] > 1.5:
+                msg_control_velocity.linear.x = 0.22
+            else:
+                self.operation_mode.name = "NONE"
+                self.operation_mode.go_front = 0.0
+                self.operation_mode.x_position = 0.0
+                self.operation_mode.y_position = 0.0
+                self.operation_mode.front_length = 0.0
+
+        if self.operation_mode.name == "right_saloon":
+            
+            if msg.ranges[270] > 1.5 and msg.ranges[0] > 1.5:
+                msg_control_velocity.linear.x = 0.22
+            else:
+                self.operation_mode.name = "NONE"
+                self.operation_mode.go_front = 0.0
+                self.operation_mode.x_position = 0.0
+                self.operation_mode.y_position = 0.0
+                self.operation_mode.front_length = 0.0  
+
+        if self.operation_mode.name == "saloon":
+            
+            if msg.ranges[90] > 1.5 and msg.ranges[0] > 1.5 and msg.ranges[270] > 1.5:
+                msg_control_velocity.linear.x = 0.22
+            else:
+                self.operation_mode.name = "NONE"
+                self.operation_mode.go_front = 0.0
+                self.operation_mode.x_position = 0.0
+                self.operation_mode.y_position = 0.0
+                self.operation_mode.front_length = 0.0
 
         self.publisher_.publish(msg_control_velocity)
         #self.get_logger().info(f'Publishing: X = "{msg_control_velocity.linear.x}" sensor = "{msg.ranges[0]}"')
