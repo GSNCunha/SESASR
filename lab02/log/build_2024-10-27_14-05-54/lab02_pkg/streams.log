@@ -1,0 +1,27 @@
+[5.080s] Invoking command in '/home/lincunha/SESASR/lab02/src/lab02_pkg': PYTHONPATH=/home/lincunha/SESASR/lab02/build/lab02_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab02_pkg build --build-base /home/lincunha/SESASR/lab02/build/lab02_pkg/build install --record /home/lincunha/SESASR/lab02/build/lab02_pkg/install.log --single-version-externally-managed install_data
+[6.865s] running egg_info
+[6.868s] writing ../../build/lab02_pkg/lab02_pkg.egg-info/PKG-INFO
+[6.869s] writing dependency_links to ../../build/lab02_pkg/lab02_pkg.egg-info/dependency_links.txt
+[6.871s] writing entry points to ../../build/lab02_pkg/lab02_pkg.egg-info/entry_points.txt
+[6.874s] writing requirements to ../../build/lab02_pkg/lab02_pkg.egg-info/requires.txt
+[6.876s] writing top-level names to ../../build/lab02_pkg/lab02_pkg.egg-info/top_level.txt
+[6.887s] reading manifest file '../../build/lab02_pkg/lab02_pkg.egg-info/SOURCES.txt'
+[6.888s] adding license file 'LICENSE'
+[6.891s] writing manifest file '../../build/lab02_pkg/lab02_pkg.egg-info/SOURCES.txt'
+[6.893s] running build
+[6.894s] running build_py
+[6.894s] copying lab02_pkg/controller.py -> /home/lincunha/SESASR/lab02/build/lab02_pkg/build/lib/lab02_pkg
+[6.899s] running install
+[6.901s] running install_lib
+[6.905s] copying /home/lincunha/SESASR/lab02/build/lab02_pkg/build/lib/lab02_pkg/controller.py -> /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg
+[6.914s] byte-compiling /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg/controller.py to controller.cpython-310.pyc
+[6.937s] running install_data
+[6.939s] running install_egg_info
+[6.946s] removing '/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[6.949s] Copying ../../build/lab02_pkg/lab02_pkg.egg-info to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg-0.0.0-py3.10.egg-info
+[6.955s] running install_scripts
+[7.079s] Installing controller script to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/lab02_pkg
+[7.081s] Installing listener script to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/lab02_pkg
+[7.083s] Installing talker script to /home/lincunha/SESASR/lab02/install/lab02_pkg/lib/lab02_pkg
+[7.087s] writing list of installed files to '/home/lincunha/SESASR/lab02/build/lab02_pkg/install.log'
+[7.251s] Invoked command in '/home/lincunha/SESASR/lab02/src/lab02_pkg' returned '0': PYTHONPATH=/home/lincunha/SESASR/lab02/build/lab02_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/lab02_pkg build --build-base /home/lincunha/SESASR/lab02/build/lab02_pkg/build install --record /home/lincunha/SESASR/lab02/build/lab02_pkg/install.log --single-version-externally-managed install_data
