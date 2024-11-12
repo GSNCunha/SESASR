@@ -1,5 +1,0 @@
-  File "/home/lincunha/SESASR/lab02/install/lab02_pkg/lib/python3.10/site-packages/lab02_pkg/controller.py", line 396
-    if self.orientation = "South":
-       ^^^^^^^^^^^^^^^^
-SyntaxError: cannot assign to attribute here. Maybe you meant '==' instead of '='?
-

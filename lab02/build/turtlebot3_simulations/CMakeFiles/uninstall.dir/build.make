@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/lincunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations
+CMAKE_SOURCE_DIR = /home/gsncunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/lincunha/SESASR/lab02/build/turtlebot3_simulations
+CMAKE_BINARY_DIR = /home/gsncunha/SESASR/lab02/build/turtlebot3_simulations
 
 # Utility rule file for uninstall.
 
@@ -78,6 +78,6 @@ CMakeFiles/uninstall.dir/clean:
 .PHONY : CMakeFiles/uninstall.dir/clean
 
 CMakeFiles/uninstall.dir/depend:
-	cd /home/lincunha/SESASR/lab02/build/turtlebot3_simulations && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/lincunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations /home/lincunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations /home/lincunha/SESASR/lab02/build/turtlebot3_simulations /home/lincunha/SESASR/lab02/build/turtlebot3_simulations /home/lincunha/SESASR/lab02/build/turtlebot3_simulations/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/gsncunha/SESASR/lab02/build/turtlebot3_simulations && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/gsncunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations /home/gsncunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_simulations /home/gsncunha/SESASR/lab02/build/turtlebot3_simulations /home/gsncunha/SESASR/lab02/build/turtlebot3_simulations /home/gsncunha/SESASR/lab02/build/turtlebot3_simulations/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/uninstall.dir/depend
 

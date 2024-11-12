@@ -1,8 +1,8 @@
-# Install script for directory: /home/lincunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_fake_node
+# Install script for directory: /home/gsncunha/SESASR/lab02/src/turtlebot3_simulations/turtlebot3_fake_node
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/lincunha/SESASR/lab02/install/turtlebot3_fake_node")
+  set(CMAKE_INSTALL_PREFIX "/home/gsncunha/SESASR/lab02/install/turtlebot3_fake_node")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,7 +43,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
+  include("/home/gsncunha/SESASR/lab02/build/turtlebot3_fake_node/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -54,5 +54,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gsncunha/SESASR/lab02/build/turtlebot3_fake_node/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,1 +1,1 @@
-/home/lincunha/SESASR/lab02/build/turtlebot3_fake_node/ament_cmake_core/turtlebot3_fake_nodeConfig.cmake
+/home/gsncunha/SESASR/lab02/build/turtlebot3_fake_node/ament_cmake_core/turtlebot3_fake_nodeConfig.cmake

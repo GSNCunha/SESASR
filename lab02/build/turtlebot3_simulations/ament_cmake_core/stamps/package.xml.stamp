@@ -17,8 +17,9 @@
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>turtlebot3</exec_depend>
   <exec_depend>turtlebot3_fake_node</exec_depend>
-  <exec_depend>turtlebot3_gazebo</exec_depend>
-  <exec_depend>turtlebot3_ignition</exec_depend>
+  <!-- <exec_depend>turtlebot3_gazebo</exec_depend> -->
+  <!-- <exec_depend>turtlebot3_ignition</exec_depend> -->
+  <!-- <exec_depend>turtlebot3_perception</exec_depend> -->
   <export>
     <build_type>ament_cmake</build_type>
   </export>

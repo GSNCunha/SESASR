@@ -308,7 +308,7 @@ class Controller(Node):
 
         if self.operation_mode.name == "go_front":
             if self.orientation == "East":
-                if (self.location_x - self.operation_mode.x_position) < self.operation_mode.go_front:
+                if (self.location_x - self.operation_mode.x_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
                     msg_control_velocity.linear.x = 0.22
                 else:
                     self.operation_mode.name = "NONE"
@@ -317,7 +317,7 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "North":
-                if (self.location_y - self.operation_mode.y_position) < self.operation_mode.go_front:
+                if (self.location_y - self.operation_mode.y_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
                     msg_control_velocity.linear.x = 0.22
                 else:
                     self.operation_mode.name = "NONE"
@@ -326,7 +326,7 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "West":
-                if (self.operation_mode.x_position - self.location_x) < self.operation_mode.go_front:
+                if (self.operation_mode.x_position - self.location_x) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
                     msg_control_velocity.linear.x = 0.22
                 else:
                     self.operation_mode.name = "NONE"
@@ -336,7 +336,7 @@ class Controller(Node):
                     self.operation_mode.front_length = 0.0
 
             if self.orientation == "South":
-                if (self.operation_mode.y_position - self.location_y) < self.operation_mode.go_front:
+                if (self.operation_mode.y_position - self.location_y) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
                     msg_control_velocity.linear.x = 0.22
                 else:
                     self.operation_mode.name = "NONE"
