@@ -23,6 +23,7 @@ setup(
                     'talker = lab02_pkg.publisher_member_function:main',
                     'listener = lab02_pkg.subscriber_member_function:main',
                     'controller= lab02_pkg.controller:main',
+                    'controller_simple= lab02_pkg.controller_simple:main',
             ],
     },
 )

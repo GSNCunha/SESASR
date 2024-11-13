@@ -7,6 +7,12 @@ from geometry_msgs.msg import Twist, Pose
 from nav_msgs.msg import Odometry
 from sensor_msgs.msg import LaserScan
 
+ADJUST_RATIO = 1
+FRONT_VELO = 0.2
+INITIAL_ORIENTATION = "East"
+ANGULAR_VELOCITY_HIGH = 0.2
+ANGULAR_VELOCITY_LOW = 0.05
+
 @dataclass
 class OperationMode:
     name: str = "NONE"
@@ -27,7 +33,7 @@ class Controller(Node):
         self.publisher_ = self.create_publisher(Twist, 'cmd_vel', 10)
         self.timer = self.create_timer(1, self.timer_callback)
         self.angle = 0
-        self.orientation = "East"
+        self.orientation = INITIAL_ORIENTATION
         self.location_x = 0.0
         self.location_y = 0.0
 
@@ -54,6 +60,8 @@ class Controller(Node):
 
     def scan_callback(self, msg):
         msg_control_velocity = Twist()
+
+       
 
         def normalize_angles(angle):
             if angle < 0.0:
@@ -129,23 +137,23 @@ class Controller(Node):
 
 
         if self.operation_mode.name == "NONE":
-            if msg.ranges[90] < 1.5 and msg.ranges[270] < 1.5:
-                if msg.ranges[0] > 1:
+            if msg.ranges[90] < 1.5 * ADJUST_RATIO and msg.ranges[270] < 1.5 * ADJUST_RATIO:
+                if msg.ranges[0] > 1 * ADJUST_RATIO:
                     self.operation_mode.name = "hallway"
                     self.get_logger().info(f'I am in a Hallway!')
                 else: 
                     self.operation_mode.name = "dead_end"
                     self.get_logger().info(f'No way to go! I may go back')
-            elif msg.ranges[90] < 1.5 and msg.ranges[270] > 1.5:
-                if msg.ranges[0] > 3.5:
+            elif msg.ranges[90] < 1.5 * ADJUST_RATIO and msg.ranges[270] > 1.5 * ADJUST_RATIO:
+                if msg.ranges[0] > 3.5 * ADJUST_RATIO:
                     self.operation_mode.name = "right_saloon"
                     self.get_logger().info(f'I have a saloon in the right')
                 else:
                     self.operation_mode.name = "turn_right"
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn right!')
-            elif msg.ranges[90] > 1.5 and msg.ranges[270] < 1.5:
-                if msg.ranges[0] > 3.5:
+            elif msg.ranges[90] > 1.5 * ADJUST_RATIO and msg.ranges[270] < 1.5 * ADJUST_RATIO:
+                if msg.ranges[0] > 3.5 * ADJUST_RATIO:
                     self.operation_mode.name = "left_saloon"
                     self.get_logger().info(f'I have a saloon in the left')
                 else:
@@ -153,7 +161,7 @@ class Controller(Node):
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn left!')
             else:
-                if msg.ranges[0] < 0.5:
+                if msg.ranges[0] < 0.5 * ADJUST_RATIO:
                     self.get_logger().info(f'I need to Turn, why not right?')
                     self.operation_mode.name = "turn_right"
                     self.operation_mode.front_length = msg.ranges[0]
@@ -164,9 +172,9 @@ class Controller(Node):
 
         if self.operation_mode.name == "hallway":
 
-            if msg.ranges[90] > 1.5:
+            if msg.ranges[90] > 1.5 * ADJUST_RATIO:
                 self.get_logger().info('Left side open!')
-                if msg.ranges[0] < 3.5:
+                if msg.ranges[0] < 3.5 * ADJUST_RATIO:
                     self.operation_mode.name = "turn_left"
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn left!')
@@ -177,11 +185,11 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
                 
-                    msg_control_velocity.linear.x = 0.22
+                    msg_control_velocity.linear.x = FRONT_VELO
 
-            elif msg.ranges[270] > 1.5:
+            elif msg.ranges[270] > 1.5 * ADJUST_RATIO:
                 self.get_logger().info('Right side open!')
-                if msg.ranges[0] < 3.5:
+                if msg.ranges[0] < 3.5 * ADJUST_RATIO:
                     self.operation_mode.name = "turn_right"
                     self.operation_mode.front_length = msg.ranges[0]
                     self.get_logger().info('I need to turn right!')
@@ -192,10 +200,10 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
 
-                    msg_control_velocity.linear.x = 0.22
+                    msg_control_velocity.linear.x = FRONT_VELO
             else:
-                if msg.ranges[0] > 0.8:
-                    msg_control_velocity.linear.x = 0.22
+                if msg.ranges[0] > 0.8 * ADJUST_RATIO:
+                    msg_control_velocity.linear.x = FRONT_VELO
                 else:
                     self.operation_mode.name = "NONE"
                     self.operation_mode.go_front = 0.0
@@ -206,13 +214,13 @@ class Controller(Node):
 
 
         if self.operation_mode.name == "turn_left":
-            turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.2
+            turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/FRONT_VELO
             angular_velocity = math.pi / 2 / turn_time
 
             radians = radians_to_go(self.angle, "left")
 
             if radians > 0:
-                if msg.ranges[0] < 0.5:
+                if msg.ranges[0] < 0.5 * ADJUST_RATIO:
                     self.get_logger().info(f'Dangerous Curve! Lets stop')
                     self.operation_mode.name = "angular_turn_left"
                 else:
@@ -220,10 +228,10 @@ class Controller(Node):
                         turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.08
                         angular_velocity = math.pi / 2 / turn_time
                         msg_control_velocity.angular.z =  angular_velocity
-                        msg_control_velocity.linear.x = 0.08
+                        msg_control_velocity.linear.x = FRONT_VELO / 3
 
                     msg_control_velocity.angular.z = angular_velocity
-                    msg_control_velocity.linear.x = 0.2
+                    msg_control_velocity.linear.x = FRONT_VELO
             else:
                 change_orientation("left")
                 self.get_logger().info(f'Finish curve! angle= {self.angle*180/(math.pi)}')
@@ -243,8 +251,8 @@ class Controller(Node):
             if radians > 0:
 
                 if radians < 0.175:
-                    msg_control_velocity.angular.z =  0.2
-                msg_control_velocity.angular.z = 0.5
+                    msg_control_velocity.angular.z =  ANGULAR_VELOCITY_LOW
+                msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
 
             else:
                 change_orientation("left")
@@ -257,13 +265,13 @@ class Controller(Node):
                 self.operation_mode.front_length = 0.0
 
         if self.operation_mode.name == "turn_right":
-                    turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.2
+                    turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/FRONT_VELO
                     angular_velocity = math.pi / 2 / turn_time
 
                     radians = radians_to_go(self.angle, "right")
 
                     if radians > 0:
-                        if any(value < 0.5 for value in msg.ranges[350:360] + msg.ranges[0:11]):
+                        if any(value < 0.5 * ADJUST_RATIO for value in msg.ranges[350:360] + msg.ranges[0:11]):
                             self.get_logger().info('Dangerous Curve! Lets stop')
                             self.operation_mode.name = "angular_turn_right"
 
@@ -272,10 +280,10 @@ class Controller(Node):
                                 turn_time = 2*math.pi*(self.operation_mode.front_length/2)/4/0.08
                                 angular_velocity = math.pi / 2 / turn_time
                                 msg_control_velocity.angular.z = - angular_velocity
-                                msg_control_velocity.linear.x = 0.08
+                                msg_control_velocity.linear.x = FRONT_VELO/3
 
                             msg_control_velocity.angular.z = - angular_velocity
-                            msg_control_velocity.linear.x = 0.2
+                            msg_control_velocity.linear.x = FRONT_VELO
                     else:
                         change_orientation("right")
                         self.get_logger().info(f'Finish curve! angle= {self.angle*180/(math.pi)}')
@@ -293,8 +301,8 @@ class Controller(Node):
 
             if radians > 0:
                 if radians < 0.175:
-                    msg_control_velocity.angular.z =  0.2
-                msg_control_velocity.angular.z = -0.5
+                    msg_control_velocity.angular.z =  -ANGULAR_VELOCITY_LOW
+                msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
 
             else:
                 change_orientation("right")
@@ -308,8 +316,8 @@ class Controller(Node):
 
         if self.operation_mode.name == "go_front":
             if self.orientation == "East":
-                if (self.location_x - self.operation_mode.x_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
-                    msg_control_velocity.linear.x = 0.22
+                if (self.location_x - self.operation_mode.x_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5 * ADJUST_RATIO:
+                    msg_control_velocity.linear.x = FRONT_VELO
                 else:
                     self.operation_mode.name = "NONE"
                     self.operation_mode.go_front = 0.0
@@ -317,8 +325,8 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "North":
-                if (self.location_y - self.operation_mode.y_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
-                    msg_control_velocity.linear.x = 0.22
+                if (self.location_y - self.operation_mode.y_position) < self.operation_mode.go_front and msg.ranges[0] > 0.5 * ADJUST_RATIO:
+                    msg_control_velocity.linear.x = FRONT_VELO
                 else:
                     self.operation_mode.name = "NONE"
                     self.operation_mode.go_front = 0.0
@@ -326,8 +334,8 @@ class Controller(Node):
                     self.operation_mode.y_position = 0.0
                     self.operation_mode.front_length = 0.0
             if self.orientation == "West":
-                if (self.operation_mode.x_position - self.location_x) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
-                    msg_control_velocity.linear.x = 0.22
+                if (self.operation_mode.x_position - self.location_x) < self.operation_mode.go_front and msg.ranges[0] > 0.5 * ADJUST_RATIO:
+                    msg_control_velocity.linear.x = FRONT_VELO
                 else:
                     self.operation_mode.name = "NONE"
                     self.operation_mode.go_front = 0.0
@@ -336,8 +344,8 @@ class Controller(Node):
                     self.operation_mode.front_length = 0.0
 
             if self.orientation == "South":
-                if (self.operation_mode.y_position - self.location_y) < self.operation_mode.go_front and msg.ranges[0] > 0.5:
-                    msg_control_velocity.linear.x = 0.22
+                if (self.operation_mode.y_position - self.location_y) < self.operation_mode.go_front and msg.ranges[0] > 0.5 * ADJUST_RATIO:
+                    msg_control_velocity.linear.x = FRONT_VELO
                 else:
                     self.operation_mode.name = "NONE"
                     self.operation_mode.go_front = 0.0
@@ -347,8 +355,8 @@ class Controller(Node):
 
         if self.operation_mode.name == "left_saloon":
             
-            if msg.ranges[90] > 1.5 and msg.ranges[0] > 1.5:
-                msg_control_velocity.linear.x = 0.22
+            if msg.ranges[90] > 1.5 * ADJUST_RATIO and msg.ranges[0] > 1.5 * ADJUST_RATIO:
+                msg_control_velocity.linear.x = FRONT_VELO
             else:
                 self.operation_mode.name = "NONE"
                 self.operation_mode.go_front = 0.0
@@ -358,8 +366,8 @@ class Controller(Node):
 
         if self.operation_mode.name == "right_saloon":
             
-            if msg.ranges[270] > 1.5 and msg.ranges[0] > 1.5:
-                msg_control_velocity.linear.x = 0.22
+            if msg.ranges[270] > 1.5 * ADJUST_RATIO and msg.ranges[0] > 1.5 * ADJUST_RATIO:
+                msg_control_velocity.linear.x = FRONT_VELO
             else:
                 self.operation_mode.name = "NONE"
                 self.operation_mode.go_front = 0.0
@@ -369,9 +377,10 @@ class Controller(Node):
 
         if self.operation_mode.name == "saloon":
             
-            if msg.ranges[90] >= 1.5 and msg.ranges[0] >= 1 and msg.ranges[270] >= 1.5:
-                msg_control_velocity.linear.x = 0.22
+            if msg.ranges[90] >= 1.5 * ADJUST_RATIO and msg.ranges[0] >= 1 * ADJUST_RATIO and msg.ranges[270] >= 1.5 * ADJUST_RATIO:
+                msg_control_velocity.linear.x = FRONT_VELO
             else:
+                msg_control_velocity.linear.x = FRONT_VELO
                 self.operation_mode.name = "NONE"
                 self.operation_mode.go_front = 0.0
                 self.operation_mode.x_position = 0.0
@@ -383,9 +392,9 @@ class Controller(Node):
             normalized_actual_angle = normalize_angles(self.angle)
             if self.orientation == "North":
                 if normalized_actual_angle < 3*math.pi/2*0.85:
-                    msg_control_velocity.angular.z = 1.5
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle < 3*math.pi/2:
-                    msg_control_velocity.angular.z = 0.3
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 else:
                     self.orientation = "South"
                     self.operation_mode.name = "NONE"
@@ -395,9 +404,9 @@ class Controller(Node):
                     self.operation_mode.front_length = 0.0
             elif self.orientation == "South":
                 if normalized_actual_angle > math.pi/2/0.85:
-                    msg_control_velocity.angular.z = -1.5
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = -0.3
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "North"
                     self.operation_mode.name = "NONE"
@@ -408,9 +417,9 @@ class Controller(Node):
 
             elif self.orientation == "West":
                 if normalized_actual_angle < 2*math.pi*0.85  and normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = 1.5
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle < 2*math.pi and normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = 0.2
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "East"
                     self.operation_mode.name = "NONE"
@@ -421,9 +430,9 @@ class Controller(Node):
 
             elif self.orientation == "East":
                 if normalized_actual_angle > math.pi/0.85 or normalized_actual_angle < math.pi/2:
-                    msg_control_velocity.angular.z = -1.5
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle > math.pi:
-                    msg_control_velocity.angular.z = -0.2
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "West"
                     self.operation_mode.name = "NONE"
