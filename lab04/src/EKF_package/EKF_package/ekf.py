@@ -14,6 +14,7 @@ class RobotEKF:
         Initializes the extended Kalman filter creating the necessary matrices
         """
         self.mu = np.zeros((dim_x))  # mean state estimate
+        print("mu:", self.mu.shape)
         self.Sigma = np.eye(dim_x)  # covariance state estimate
         self.Mt = np.eye(dim_u)  # process noise
 
@@ -43,7 +44,7 @@ class RobotEKF:
             self.Sigma: the covariance matrix of the state prediction
         """
         # Update the state prediction evaluating the motion model
-        self.mu = self.eval_gux(self.mu, u, sigma_u, *g_extra_args)
+        self.mu = self.eval_gux(*self.mu, *u, *g_extra_args)
 
         args = (*self.mu, *u)
         # Update the covariance matrix of the state prediction,
