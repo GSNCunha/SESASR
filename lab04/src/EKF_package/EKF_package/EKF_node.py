@@ -11,7 +11,7 @@ class MinimalPublisher(Node):
     def __init__(self):
         super().__init__('EKF_node')
 
-
+        # Load landmarks from YAML
         self.landmarks = self.load_landmarks()
 
         # Initialize EKF with initial state and covariance
@@ -19,12 +19,14 @@ class MinimalPublisher(Node):
         initial_covariance = [[0.1, 0, 0], [0, 0.1, 0], [0, 0, 0.1]]
         self.ekf = RobotEKF(initial_state, initial_covariance)
 
-        # Subscribe to odometry topic
+        # Subscribe to odometry and landmark topics
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
         self.create_subscription(LandmarkArray, '/landmarks', self.landmark_callback, 10)
+
+        # Publisher for EKF output
         self.ekf_publisher = self.create_publisher(Odometry, '/ekf', 10)
         
-        # Timer for EKF update
+        # Timer for EKF update (20 Hz)
         timer_period = 1/20  # 20 Hz
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
@@ -43,13 +45,10 @@ class MinimalPublisher(Node):
         # Update linear and angular velocities from odometry
         self.v = msg.twist.twist.linear.x
         self.w = msg.twist.twist.angular.z
-        
-        # Predict state with control input
-        control_input = [self.v, self.w]
-        self.ekf.predict(control_input)
 
     def landmark_callback(self, msg: LandmarkArray):
         odom_msg = Odometry()
+        
         # Loop through each landmark in the message and update the EKF
         for landmark in msg.landmarks:
             id = landmark.id
@@ -66,7 +65,6 @@ class MinimalPublisher(Node):
             self.ekf.update(measurement)
 
         # Publish the Odometry message
-
         odom_msg.header.stamp = self.get_clock().now().to_msg()  # Set current time
         estimated_state = self.ekf.get_state()
 
@@ -76,26 +74,7 @@ class MinimalPublisher(Node):
     
         self.ekf_publisher.publish(odom_msg)
 
-
     def timer_callback(self):
-        # Placeholder measurement update
-        measurement = [self.v, self.w]  # Replace with actual measurement data
-        self.ekf.update(measurement)
-
-        # Log estimated state
-        estimated_state = self.ekf.get_state()
-        self.get_logger().info(f'Estimated State: {estimated_state}')
-
-
-def main(args=None):
-    rclpy.init(args=args)
-    minimal_publisher = MinimalPublisher()
-    rclpy.spin(minimal_publisher)
-
-    # Clean up
-    minimal_publisher.destroy_node()
-    rclpy.shutdown()
-
-
-if __name__ == '__main__':
-    main()
+        # Perform the EKF prediction step with the most recent control input
+        control_input = [self.v, self.w]
+        self.ekf.predict(control_input)  # Predict the state with the given velocities
