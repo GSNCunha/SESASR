@@ -75,16 +75,16 @@ class Ekf(Node):
                 ly = self.landmarks[id]['y']
 
                 # Measurement update with the observed landmark
-                measurement = [range, bearing, lx, ly]
+                measurement = [range, bearing]
                 eval_hx, eval_Ht = landmark_sm_simpy()
-                print("range:", lx, ly, bearing, self.ekf.mu[0], self.ekf.mu[1])    
+                print("range:",self.ekf.mu)    
                 self.ekf.update(measurement, eval_hx, eval_Ht, self.qt, (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], lx, ly), (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], lx, ly), residual=np.subtract) 
             else:
                 self.get_logger().warn(f"Landmark with ID {id} not found in YAML configuration.")
 
         # Populate and publish Odometry message
         odom_msg.header.stamp = self.get_clock().now().to_msg()
-        estimated_state = self.ekf.get_state()
+        estimated_state = self.ekf.mu
 
         odom_msg.pose.pose.position.x = estimated_state[0]
         odom_msg.pose.pose.position.y = estimated_state[1]

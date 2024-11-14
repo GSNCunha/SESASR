@@ -13,6 +13,7 @@ INITIAL_ORIENTATION = "East"
 ANGULAR_VELOCITY_HIGH = 0.2
 ANGULAR_VELOCITY_LOW = 0.05
 
+
 @dataclass
 class OperationMode:
     name: str = "NONE"
