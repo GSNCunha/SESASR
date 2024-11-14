@@ -10,6 +10,8 @@ from sensor_msgs.msg import LaserScan
 ADJUST_RATIO = 1
 FRONT_VELO = 0.2
 INITIAL_ORIENTATION = "East"
+ANGULAR_VELOCITY_HIGH = 0.2
+ANGULAR_VELOCITY_LOW = 0.05
 
 @dataclass
 class OperationMode:
@@ -249,8 +251,8 @@ class Controller(Node):
             if radians > 0:
 
                 if radians < 0.175:
-                    msg_control_velocity.angular.z =  0.2
-                msg_control_velocity.angular.z = 0.5
+                    msg_control_velocity.angular.z =  ANGULAR_VELOCITY_LOW
+                msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
 
             else:
                 change_orientation("left")
@@ -299,8 +301,8 @@ class Controller(Node):
 
             if radians > 0:
                 if radians < 0.175:
-                    msg_control_velocity.angular.z =  0.2
-                msg_control_velocity.angular.z = -0.5
+                    msg_control_velocity.angular.z =  -ANGULAR_VELOCITY_LOW
+                msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
 
             else:
                 change_orientation("right")
@@ -390,9 +392,9 @@ class Controller(Node):
             normalized_actual_angle = normalize_angles(self.angle)
             if self.orientation == "North":
                 if normalized_actual_angle < 3*math.pi/2*0.85:
-                    msg_control_velocity.angular.z = 1.5
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle < 3*math.pi/2:
-                    msg_control_velocity.angular.z = 0.3
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 else:
                     self.orientation = "South"
                     self.operation_mode.name = "NONE"
@@ -402,9 +404,9 @@ class Controller(Node):
                     self.operation_mode.front_length = 0.0
             elif self.orientation == "South":
                 if normalized_actual_angle > math.pi/2/0.85:
-                    msg_control_velocity.angular.z = -1.5
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = -0.3
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "North"
                     self.operation_mode.name = "NONE"
@@ -415,9 +417,9 @@ class Controller(Node):
 
             elif self.orientation == "West":
                 if normalized_actual_angle < 2*math.pi*0.85  and normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = 1.5
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle < 2*math.pi and normalized_actual_angle > math.pi/2:
-                    msg_control_velocity.angular.z = 0.2
+                    msg_control_velocity.angular.z = ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "East"
                     self.operation_mode.name = "NONE"
@@ -428,9 +430,9 @@ class Controller(Node):
 
             elif self.orientation == "East":
                 if normalized_actual_angle > math.pi/0.85 or normalized_actual_angle < math.pi/2:
-                    msg_control_velocity.angular.z = -1.5
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_HIGH
                 elif normalized_actual_angle > math.pi:
-                    msg_control_velocity.angular.z = -0.2
+                    msg_control_velocity.angular.z = -ANGULAR_VELOCITY_LOW
                 else:
                     self.orientation = "West"
                     self.operation_mode.name = "NONE"

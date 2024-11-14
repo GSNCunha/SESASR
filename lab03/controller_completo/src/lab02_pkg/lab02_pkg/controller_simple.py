@@ -20,7 +20,6 @@ class OperationMode:
 class Controller(Node):
 
     def __init__(self):
-    
         super().__init__('controller')
 
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
