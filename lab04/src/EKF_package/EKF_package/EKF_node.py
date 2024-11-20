@@ -15,8 +15,8 @@ class Ekf(Node):
         self.landmarks = self.load_landmarks()
 
         # Initialize EKF with initial state and covariance
-        self.initial_state = [0.0001, 0.0001, 0.0001]
-        self.initial_covariance = [[0.1, 0, 0], [0, 0.1, 0], [0, 0, 0.1]]
+        self.initial_state = [0.0001, 0.0001, 0.0001, 0.0001, 0.0001]
+        self.initial_covariance = np.eye(5) * 0.1  # Matriz identidade escalada 5x5
         self.qt = np.eye(2) * 0.1  # Process noise covariance
         self.mt = np.eye(2) * 0.1  # Measurement noise covariance
 
@@ -77,8 +77,19 @@ class Ekf(Node):
                 # Measurement update with the observed landmark
                 measurement = [range, bearing]
                 eval_hx, eval_Ht = landmark_sm_simpy()
-                print("range:",self.ekf.mu)    
-                self.ekf.update(measurement, eval_hx, eval_Ht, self.qt, (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], lx, ly), (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], lx, ly), residual=np.subtract) 
+                print("mu", self.ekf.mu)  
+
+
+                self.ekf.update(
+                measurement,
+                eval_hx,
+                eval_Ht,
+                self.qt,
+                (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], self.ekf.mu[3], self.ekf.mu[4], lx, ly),  # state with v and w
+                (self.ekf.mu[0], self.ekf.mu[1], self.ekf.mu[2], self.ekf.mu[3], self.ekf.mu[4], lx, ly),
+                residual=np.subtract
+            )
+
             else:
                 self.get_logger().warn(f"Landmark with ID {id} not found in YAML configuration.")
 
@@ -94,7 +105,7 @@ class Ekf(Node):
 
     def timer_callback(self):
         # Define control input
-        control_input = [self.v, self.w]
+        control_input = []
         
         # Define control noise standard deviations (e.g., 0.1 for each as a placeholder)
         sigma_u = [0.1, 0.1]  # Ensure this is always a list or array

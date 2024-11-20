@@ -110,35 +110,43 @@ def landmark_range_bearing_sensor(robot_pose, landmark, sigma, max_range=6.0, fo
 
 def velocity_mm_Gt(x, u, dt):
     """
-    Evaluate Jacobian Gt w.r.t state x=[x, y, theta]
+    Evaluate Jacobian Gt w.r.t state x=[x, y, theta, v, w]
     """
     theta = x[2]
     v, w = u[0], u[1]
     r = v/w
     Gt = np.array([
-        [1, 0, -r*cos(theta) + r*cos(theta+w*dt)],
-        [0, 1, -r*sin(theta) + r*sin(theta+w*dt)],
-        [0, 0, 1]
+        [1, 0, -r*cos(theta) + r*cos(theta+w*dt), 0, 0],
+        [0, 1, -r*sin(theta) + r*sin(theta+w*dt), 0, 0],
+        [0, 0, 1, 0, 0],
+        [0, 0, 0, 1, 0],  # For v (linear velocity)
+        [0, 0, 0, 0, 1]   # For w (angular velocity)
     ])
-
     return Gt
+
 
 def velocity_mm_Vt(x, u, dt):
     """
-    Evaluate Jacobian Vt w.r.t command u=[v,w]
+    Evaluate Jacobian Vt w.r.t control inputs u=[v, w]
+    This is the partial derivative of the state transition model with respect to the control inputs.
     """
+    # Extract state values
     theta = x[2]
+    
+    # Extract control inputs
     v, w = u[0], u[1]
-    r = v/w
+
+    # Compute the Jacobian of the motion model with respect to the control inputs
     Vt = np.array([
-        [-sin(theta)/w + sin(theta+w*dt)/w, 
-         dt*v*cos(theta+w*dt)/w + v*sin(theta)/w**2 - v*sin(theta+w*dt)/w**2],
-        [-cos(theta)/w - cos(theta+w*dt)/w, 
-         dt*v*sin(theta+w*dt)/w - v*cos(theta)/w**2 + v*cos(theta+w*dt)/w**2],
-        [0, dt]
+        [dt * cos(theta), 0],    # Effect of linear velocity on x
+        [dt * sin(theta), 0],    # Effect of linear velocity on y
+        [0, dt],                 # Effect of angular velocity on theta
+        [cos(theta), 0],         # Effect of linear velocity on v (velocity state)
+        [0, 1]                   # Effect of angular velocity on w (angular velocity state)
     ])
 
     return Vt
+
 
 def landmark_sm_Ht(x, mx, my):
     x, y = x[0], x[1]
@@ -170,12 +178,14 @@ def velocity_mm_simpy():
             [x - R * sympy.sin(theta) + R * sympy.sin(beta)],
             [y + R * sympy.cos(theta) - R * sympy.cos(beta)],
             [beta],
+            [v],
+            [w],
         ]
     )
 
     eval_gux = squeeze_sympy_out(sympy.lambdify((x, y, theta, v, w, dt), gux, 'numpy'))
 
-    Gt = gux.jacobian(Matrix([x, y, theta]))
+    Gt = gux.jacobian(Matrix([x, y, theta, v , w]))
     eval_Gt = squeeze_sympy_out(sympy.lambdify((x, y, theta, v, w, dt), Gt, "numpy"))
     #print("Gt:", Gt)
 
@@ -207,19 +217,22 @@ def odometry_mm_simpy():
     return eval_gux_odom, eval_Gt_odom, eval_Vt_odom
 
 def landmark_sm_simpy():
-    x, y, theta, mx, my = symbols("x y theta m_x m_y")
+    x, y, theta, v, w, mx, my = symbols("x y theta v w m_x m_y")
 
     hx = Matrix(
         [
-            [sympy.sqrt((mx - x) ** 2 + (my - y) ** 2)],
-            [sympy.atan2(my - y, mx - x) - theta],
+            [sympy.sqrt((mx - x) ** 2 + (my - y) ** 2)],  # Range to the landmark
+            [sympy.atan2(my - y, mx - x) - theta],       # Bearing angle to the landmark
         ]
     )
-    eval_hx = squeeze_sympy_out(sympy.lambdify((x, y, theta, mx, my), hx, "numpy"))
+
+    # Update hx to account for all variables (x, y, theta, v, w, mx, my)
+    eval_hx = squeeze_sympy_out(sympy.lambdify((x, y, theta, v, w, mx, my), hx, "numpy"))
     
-    Ht = hx.jacobian(Matrix([x, y, theta]))
-    eval_Ht = squeeze_sympy_out(sympy.lambdify((x, y, theta, mx, my), Ht, "numpy"))
-    #print("Ht:", Ht)
+    # Compute the Jacobian of hx with respect to [x, y, theta, v, w]
+    Ht = hx.jacobian(Matrix([x, y, theta, v, w]))  # Jacobian w.r.t. the full state vector
+    eval_Ht = squeeze_sympy_out(sympy.lambdify((x, y, theta, v, w, mx, my), Ht, "numpy"))
 
     return eval_hx, eval_Ht
+
 

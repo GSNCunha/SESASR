@@ -13,8 +13,9 @@ class RobotEKF:
         """
         Initializes the extended Kalman filter creating the necessary matrices
         """
+        
+
         self.mu = np.zeros((dim_x))  # mean state estimate
-        print("mu:", self.mu.shape)
         self.Sigma = np.eye(dim_x)  # covariance state estimate
         self.Mt = np.eye(dim_u)  # process noise
 
@@ -53,12 +54,11 @@ class RobotEKF:
         Vt = self.eval_Vt(*args, *g_extra_args)
         self.Sigma = Gt @ self.Sigma @ Gt.T + Vt @ self.Mt @ Vt.T
 
-    def update(self, z, eval_hx, eval_Ht, Qt, Ht_args=(), hx_args=(),  residual=np.subtract, **kwargs):
+    def update(self, z, eval_hx, eval_Ht, Qt, Ht_args=(), hx_args=(), residual=np.subtract, **kwargs):
         """Performs the update innovation of the extended Kalman filter.
 
         Parameters
         ----------
-
         z : np.array
             measurement for this step.
 
@@ -68,8 +68,8 @@ class RobotEKF:
         residual : function (z, z2), optional
             Optional function that computes the residual (difference) between
             the two measurement vectors. If you do not provide this, then the
-            built in minus operator will be used. You will normally want to use
-            the built in unless your residual computation is nonlinear (for
+            built-in minus operator will be used. You will normally want to use
+            the built-in unless your residual computation is nonlinear (for
             example, if they are angles)
         """
 
@@ -80,18 +80,20 @@ class RobotEKF:
         # Compute the Kalman gain, you need to evaluate the Jacobian Ht
         Ht = eval_Ht(*Ht_args)
         SigmaHT = self.Sigma @ Ht.T
-        self.S = Ht @ SigmaHT + Qt
+        self.S = Ht @ SigmaHT + Qt 
         self.K = SigmaHT @ inv(self.S)
+
 
         # Evaluate the expected measurement and compute the residual, then update the state prediction
         z_hat = eval_hx(*hx_args)
 
-        # if the z measurement include an angle update, we need to specify the positional index to normalize the residual
+        # if the z measurement includes an angle update, we need to specify the positional index to normalize the residual
         if 'angle_idx' in kwargs:
             angle_indx = kwargs["angle_idx"]
             y = residual(z, z_hat, angle_indx)
         else: 
             y = residual(z, z_hat)
+        
         self.mu = self.mu + self.K @ y
 
         # P = (I-KH)P(I-KH)' + KRK' is more numerically stable and works for non-optimal K vs the equation
@@ -99,3 +101,4 @@ class RobotEKF:
         # Note that I is the identity matrix.
         I_KH = self._I - self.K @ Ht
         self.Sigma = I_KH @ self.Sigma @ I_KH.T + self.K @ Qt @ self.K.T
+
