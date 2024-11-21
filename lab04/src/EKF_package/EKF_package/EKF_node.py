@@ -32,7 +32,7 @@ class Ekf(Node):
         self.ekf.mu = np.array(self.initial_state)   # Set initial state
 
         # Subscribe to odometry and landmark topics
-        self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
+        self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
         self.create_subscription(LandmarkArray, '/landmarks', self.landmark_callback, 10)
 
         # Publisher for EKF output
@@ -56,10 +56,9 @@ class Ekf(Node):
         return landmarks
 
 
-    def odom_callback(self, msg: Odometry):
-        # Update linear and angular velocities from odometry
-        self.v = msg.twist.twist.linear.x
-        self.w = msg.twist.twist.angular.z
+    def cmd_vel_callback(self, msg: Twist):
+        self.v = msg.linear.x
+        self.w = msg.angular.z
 
     def landmark_callback(self, msg: LandmarkArray):
         odom_msg = Odometry()
