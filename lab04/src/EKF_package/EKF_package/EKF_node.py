@@ -100,6 +100,9 @@ class Ekf(Node):
         odom_msg.pose.pose.position.x = estimated_state[0]
         odom_msg.pose.pose.position.y = estimated_state[1]
         odom_msg.pose.pose.orientation.z = estimated_state[2]
+        odom_msg.twist.twist.linear.x = estimated_state[3]
+        odom_msg.twist.twist.angular.z = estimated_state[4]
+
         
         self.ekf_publisher.publish(odom_msg)
 
