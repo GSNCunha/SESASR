@@ -43,8 +43,8 @@ class Ekf(Node):
         self.timer = self.create_timer(timer_period, self.timer_callback)
         
         # Initialize control variables
-        self.v = 0.0
-        self.w = 0.0
+        self.v = 0.0001
+        self.w = 0.0001
 
     def load_landmarks(self):
         with open('/home/gsncunha/SESASR/lab04/install/turtlebot3_perception/share/turtlebot3_perception/config/landmarks.yaml', 'r') as file:
