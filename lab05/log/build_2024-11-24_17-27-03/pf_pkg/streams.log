@@ -1,0 +1,34 @@
+[0.662s] Invoking command in '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg': PYTHONPATH=/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build install --record /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data
+[0.905s] running egg_info
+[0.906s] creating ../../build/pf_pkg/pf_pkg.egg-info
+[0.906s] writing ../../build/pf_pkg/pf_pkg.egg-info/PKG-INFO
+[0.907s] writing dependency_links to ../../build/pf_pkg/pf_pkg.egg-info/dependency_links.txt
+[0.907s] writing entry points to ../../build/pf_pkg/pf_pkg.egg-info/entry_points.txt
+[0.907s] writing requirements to ../../build/pf_pkg/pf_pkg.egg-info/requires.txt
+[0.907s] writing top-level names to ../../build/pf_pkg/pf_pkg.egg-info/top_level.txt
+[0.907s] writing manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[0.909s] reading manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[0.909s] adding license file 'LICENSE'
+[0.910s] writing manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[0.910s] running build
+[0.910s] running build_py
+[0.910s] creating /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build
+[0.911s] creating /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib
+[0.911s] creating /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[0.911s] copying pf_pkg/__init__.py -> /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[0.911s] running install
+[0.911s] running install_lib
+[0.912s] creating /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[0.912s] copying /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/__init__.py -> /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[0.913s] byte-compiling /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/__init__.py to __init__.cpython-310.pyc
+[0.913s] running install_data
+[0.914s] creating /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/share/ament_index
+[0.914s] creating /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/share/ament_index/resource_index
+[0.914s] creating /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/share/ament_index/resource_index/packages
+[0.914s] copying resource/pf_pkg -> /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/share/ament_index/resource_index/packages
+[0.914s] copying package.xml -> /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/share/pf_pkg
+[0.914s] running install_egg_info
+[0.915s] Copying ../../build/pf_pkg/pf_pkg.egg-info to /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg-0.0.0-py3.10.egg-info
+[0.916s] running install_scripts
+[0.938s] writing list of installed files to '/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log'
+[0.959s] Invoked command in '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg' returned '0': PYTHONPATH=/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build install --record /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data

@@ -1,0 +1,39 @@
+[0.082s] Invoking command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake /home/thilevin/sesasr/SESASR/lab05/src/turtlebot3_simulations/turtlebot3_simulations -DCMAKE_INSTALL_PREFIX=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations
+[0.285s] -- The C compiler identification is GNU 11.4.0
+[1.171s] -- The CXX compiler identification is GNU 11.4.0
+[1.678s] -- Detecting C compiler ABI info
+[1.887s] -- Detecting C compiler ABI info - done
+[1.894s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.894s] -- Detecting C compile features
+[1.895s] -- Detecting C compile features - done
+[1.898s] -- Detecting CXX compiler ABI info
+[2.121s] -- Detecting CXX compiler ABI info - done
+[2.128s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.128s] -- Detecting CXX compile features
+[2.129s] -- Detecting CXX compile features - done
+[2.131s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[2.283s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[2.448s] -- Configuring done
+[2.452s] -- Generating done
+[2.453s] -- Build files have been written to: /home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations
+[2.457s] Invoked command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations' returned '0': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake /home/thilevin/sesasr/SESASR/lab05/src/turtlebot3_simulations/turtlebot3_simulations -DCMAKE_INSTALL_PREFIX=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations
+[2.460s] Invoking command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake --build /home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations -- -j12 -l12
+[2.497s] Invoked command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations' returned '0': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake --build /home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations -- -j12 -l12
+[2.524s] Invoking command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake --install /home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations
+[2.531s] -- Install configuration: ""
+[2.532s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/ament_index/resource_index/package_run_dependencies/turtlebot3_simulations
+[2.532s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/ament_index/resource_index/parent_prefix_path/turtlebot3_simulations
+[2.533s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/ament_prefix_path.sh
+[2.533s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/ament_prefix_path.dsv
+[2.533s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/path.sh
+[2.534s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/environment/path.dsv
+[2.534s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.bash
+[2.534s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.sh
+[2.535s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.zsh
+[2.535s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/local_setup.dsv
+[2.535s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/package.dsv
+[2.535s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/ament_index/resource_index/packages/turtlebot3_simulations
+[2.535s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/cmake/turtlebot3_simulationsConfig.cmake
+[2.536s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/cmake/turtlebot3_simulationsConfig-version.cmake
+[2.536s] -- Installing: /home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_simulations/share/turtlebot3_simulations/package.xml
+[2.539s] Invoked command in '/home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations' returned '0': AMENT_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/thilevin/sesasr/SESASR/lab05/install/turtlebot3_fake_node:/opt/ros/humble /usr/bin/cmake --install /home/thilevin/sesasr/SESASR/lab05/build/turtlebot3_simulations

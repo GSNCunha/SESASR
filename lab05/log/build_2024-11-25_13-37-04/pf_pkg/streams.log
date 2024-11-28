@@ -1,0 +1,28 @@
+[1.203s] Invoking command in '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg': PYTHONPATH=/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build install --record /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data
+[1.531s] running egg_info
+[1.532s] writing ../../build/pf_pkg/pf_pkg.egg-info/PKG-INFO
+[1.533s] writing dependency_links to ../../build/pf_pkg/pf_pkg.egg-info/dependency_links.txt
+[1.533s] writing entry points to ../../build/pf_pkg/pf_pkg.egg-info/entry_points.txt
+[1.533s] writing requirements to ../../build/pf_pkg/pf_pkg.egg-info/requires.txt
+[1.533s] writing top-level names to ../../build/pf_pkg/pf_pkg.egg-info/top_level.txt
+[1.537s] reading manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[1.544s] adding license file 'LICENSE'
+[1.545s] writing manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[1.545s] running build
+[1.545s] running build_py
+[1.545s] copying pf_pkg/pf.py -> /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[1.546s] copying pf_pkg/pfpkg.py -> /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[1.548s] running install
+[1.549s] running install_lib
+[1.550s] copying /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/pf.py -> /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[1.551s] copying /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/pfpkg.py -> /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[1.552s] byte-compiling /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/pf.py to pf.cpython-310.pyc
+[1.554s] byte-compiling /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/pfpkg.py to pfpkg.cpython-310.pyc
+[1.556s] running install_data
+[1.556s] running install_egg_info
+[1.558s] removing '/home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[1.560s] Copying ../../build/pf_pkg/pf_pkg.egg-info to /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg-0.0.0-py3.10.egg-info
+[1.561s] running install_scripts
+[1.584s] Installing pf_node script to /home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/pf_pkg
+[1.585s] writing list of installed files to '/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log'
+[1.614s] Invoked command in '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg' returned '0': PYTHONPATH=/home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/thilevin/sesasr/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/build install --record /home/thilevin/sesasr/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data
