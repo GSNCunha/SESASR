@@ -1,3 +1,0 @@
-[console_scripts]
-pf_node = pf_pkg.pfpkg:main
-
