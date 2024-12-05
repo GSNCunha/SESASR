@@ -14,6 +14,8 @@ from pf_pkg.utils import  (
     state_mean,
 )
 import yaml
+from visualization_msgs.msg import Marker, MarkerArray
+
 
 
 def load_landmarks(yaml_file):
@@ -38,7 +40,7 @@ class ParticleFilterNode(Node):
         # Declare parameters
         self.declare_parameter('resampling_strategy', 'systematic')
         self.declare_parameter('init_strategy', 'uniform')
-        self.declare_parameter('landmarks_yaml', '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
+        self.declare_parameter('landmarks_yaml', '/home/gsncunha/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
 
         # Load landmarks
         landmarks_yaml = self.get_parameter('landmarks_yaml').get_parameter_value().string_value
@@ -51,7 +53,7 @@ class ParticleFilterNode(Node):
             dim_u=2,  # [v, w]
             eval_gux=sample_velocity_motion_model,
             resampling_fn=self.dynamic_resampling,
-            boundaries=[(0.0, 10.0), (0.0, 10.0), (-np.pi, np.pi)],  # Environment boundaries
+            boundaries=[(-5.0, 5.0), (-5.0, 5.0), (-np.pi, np.pi)],  # Environment boundaries
             N=1000
         )
         self.initialize_particles()
@@ -59,9 +61,12 @@ class ParticleFilterNode(Node):
         # Subscriptions
         self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
         self.create_subscription(LandmarkArray, '/landmarks', self.landmarks_callback, 10)
+        
 
         # Publisher
         self.pub_pf = self.create_publisher(Odometry, '/pf', 10)
+        self.pub_markers = self.create_publisher(MarkerArray, '/particles', 10)
+
 
         # Timer for prediction step (20 Hz)
         self.create_timer(0.05, self.run_prediction)
@@ -92,6 +97,36 @@ class ParticleFilterNode(Node):
 
         self.pf.weights = np.ones(self.pf.N) / self.pf.N
 
+    def publish_particles(self):
+        """
+        Publish particles as a MarkerArray for visualization in RViz.
+        """
+        marker_array = MarkerArray()
+        for i, particle in enumerate(self.pf.particles):
+            marker = Marker()
+            marker.header.stamp = self.get_clock().now().to_msg()
+            marker.header.frame_id = "map"
+            marker.ns = "particles"
+            marker.id = i
+            marker.type = Marker.SPHERE
+            marker.action = Marker.ADD
+            marker.pose.position.x = particle[0]
+            marker.pose.position.y = particle[1]
+            marker.pose.position.z = 0.0
+            marker.pose.orientation.w = 1.0
+            marker.scale.x = 0.05  # Size of the sphere
+            marker.scale.y = 0.05
+            marker.scale.z = 0.05
+            marker.color.a = 1.0  # Alpha (transparency)
+            marker.color.r = 1.0  # Red
+            marker.color.g = 0.0  # Green
+            marker.color.b = 0.0  # Blue
+            marker_array.markers.append(marker)
+
+        # Publish the MarkerArray
+        self.pub_markers.publish(marker_array)
+
+
     def cmd_vel_callback(self, msg):
         self.latest_twist = [msg.linear.x, msg.angular.z]
 
@@ -120,23 +155,25 @@ class ParticleFilterNode(Node):
                 eval_hx=landmark_range_bearing_model,
                 hx_args=(landmark_pos, sigma_z)
             )
+            
+        self.pf.normalize_weights()
+        print("Weights normalized")
 
-            self.pf.normalize_weights()
-            print("Weights normalized")
+        # Dynamically select and pass the resampling function
+        if self.pf.neff() < self.pf.N / 2:
+            resampling_fn = self.dynamic_resampling()
+            print("Resampling particles")
+            self.pf.resampling(resampling_fn)  #No need to pass weights explicitly
 
-            # Dynamically select and pass the resampling function
-            if self.pf.neff() < self.pf.N / 2:
-                resampling_fn = self.dynamic_resampling()
-                print("Resampling particles")
-                self.pf.resampling(resampling_fn)  # No need to pass weights explicitly
+        # Estimate the state
+        self.pf.estimate()
+        print(f"Estimated state: {self.pf.mu}")
 
-            # Estimate the state
-            self.pf.estimate()
-            print(f"Estimated state: {self.pf.mu}")
+        # Publish the estimated state
+        print("Publishing estimate")
+        self.publish_estimate()
+        self.publish_particles()
 
-            # Publish the estimated state
-            print("Publishing estimate")
-            self.publish_estimate()
 
     def run_prediction(self):
         """
