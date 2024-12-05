@@ -40,7 +40,7 @@ class ParticleFilterNode(Node):
         # Declare parameters
         self.declare_parameter('resampling_strategy', 'systematic')
         self.declare_parameter('init_strategy', 'uniform')
-        self.declare_parameter('landmarks_yaml', '/home/gsncunha/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
+        self.declare_parameter('landmarks_yaml', '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
 
         # Load landmarks
         landmarks_yaml = self.get_parameter('landmarks_yaml').get_parameter_value().string_value
@@ -53,7 +53,7 @@ class ParticleFilterNode(Node):
             dim_u=2,  # [v, w]
             eval_gux=sample_velocity_motion_model,
             resampling_fn=self.dynamic_resampling,
-            boundaries=[(-5.0, 5.0), (-5.0, 5.0), (-np.pi, np.pi)],  # Environment boundaries
+            boundaries=[(-3.0, 3.0), (-3.0, 3.0), (-np.pi, np.pi)],  # Environment boundaries
             N=1000
         )
         self.initialize_particles()
@@ -105,7 +105,7 @@ class ParticleFilterNode(Node):
         for i, particle in enumerate(self.pf.particles):
             marker = Marker()
             marker.header.stamp = self.get_clock().now().to_msg()
-            marker.header.frame_id = "map"
+            marker.header.frame_id = "odom"
             marker.ns = "particles"
             marker.id = i
             marker.type = Marker.SPHERE
@@ -134,7 +134,7 @@ class ParticleFilterNode(Node):
         """
         Update particle weights based on landmark measurements.
         """
-        sigma_z = [0.5, 0.1]  # Measurement noise (range, bearing)
+        sigma_z = [0.06, 0.03]  # Measurement noise (range, bearing)
         for landmark_msg in msg.landmarks:
             z = [landmark_msg.range, landmark_msg.bearing]
             landmark_id = landmark_msg.id
