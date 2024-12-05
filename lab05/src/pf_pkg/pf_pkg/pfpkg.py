@@ -51,10 +51,10 @@ class ParticleFilterNode(Node):
         self.pf = RobotPF(
             dim_x=3,  # [x, y, theta]
             dim_u=2,  # [v, w]
-            eval_gux=sample_velocity_motion_model,
-            resampling_fn=self.dynamic_resampling,
-            boundaries=[(-5.0, 5.0), (-5.0, 5.0), (-np.pi, np.pi)],  # Environment boundaries
-            N=1000
+            eval_gux= sample_velocity_motion_model,
+            resampling_fn = self.dynamic_resampling,
+            boundaries=[(-3.0, 3.0), (-3.0, 3.0), (-np.pi, np.pi)],  # Environment boundaries
+            N=2000
         )
         self.initialize_particles()
 
@@ -105,7 +105,7 @@ class ParticleFilterNode(Node):
         for i, particle in enumerate(self.pf.particles):
             marker = Marker()
             marker.header.stamp = self.get_clock().now().to_msg()
-            marker.header.frame_id = "map"
+            marker.header.frame_id = "odom"
             marker.ns = "particles"
             marker.id = i
             marker.type = Marker.SPHERE
@@ -211,7 +211,7 @@ class ParticleFilterNode(Node):
         """
         odom_msg = Odometry()
         odom_msg.header.stamp = self.get_clock().now().to_msg()
-        odom_msg.header.frame_id = "map"
+        odom_msg.header.frame_id = "odom"
         odom_msg.pose.pose.position.x = self.pf.mu[0]
         odom_msg.pose.pose.position.y = self.pf.mu[1]
         odom_msg.pose.pose.orientation.z = np.sin(self.pf.mu[2] / 2)
