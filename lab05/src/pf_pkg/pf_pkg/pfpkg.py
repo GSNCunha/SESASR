@@ -54,7 +54,7 @@ class ParticleFilterNode(Node):
             eval_gux=sample_velocity_motion_model,
             resampling_fn=self.dynamic_resampling,
             boundaries=[(-3.0, 3.0), (-3.0, 3.0), (-np.pi, np.pi)],  # Environment boundaries
-            N=1000
+            N=2000
         )
         self.initialize_particles()
 
@@ -134,21 +134,22 @@ class ParticleFilterNode(Node):
         """
         Update particle weights based on landmark measurements.
         """
-        sigma_z = [0.06, 0.03]  # Measurement noise (range, bearing)
+        sigma_z = [0.026, 0.1]  # Measurement noise (range, bearing)
         for landmark_msg in msg.landmarks:
             z = [landmark_msg.range, landmark_msg.bearing]
             landmark_id = landmark_msg.id
-
+            print(f">>>Landmark ID: {landmark_id}<<<<")
             # Find the corresponding landmark position
             landmark_idx = self.landmarks['id'].index(landmark_id)
+            print(f">>>>>Landmark Index: {landmark_idx}<<<<<<")
             landmark_pos = [
                 self.landmarks['x'][landmark_idx],
                 self.landmarks['y'][landmark_idx]
             ]
-            print(f"Landmark Position: {landmark_pos}")
+            # print(f"Landmark Position: {landmark_pos}")
 
             # Update particles with measurements
-            print(f"Updating particles with z: {z}, sigma_z: {sigma_z}")
+            # print(f"Updating particles with z: {z}, sigma_z: {sigma_z}")
             self.pf.update(
                 z=z,
                 sigma_z=sigma_z,
@@ -157,7 +158,7 @@ class ParticleFilterNode(Node):
             )
             
         self.pf.normalize_weights()
-        print("Weights normalized")
+        # print("Weights normalized")
 
         # Dynamically select and pass the resampling function
         if self.pf.neff() < self.pf.N / 2:
@@ -167,10 +168,10 @@ class ParticleFilterNode(Node):
 
         # Estimate the state
         self.pf.estimate()
-        print(f"Estimated state: {self.pf.mu}")
+        # print(f"Estimated state: {self.pf.mu}")
 
         # Publish the estimated state
-        print("Publishing estimate")
+        # print("Publishing estimate")
         self.publish_estimate()
         self.publish_particles()
 
@@ -182,7 +183,7 @@ class ParticleFilterNode(Node):
         if self.latest_twist is None:
             return
         u = self.latest_twist
-        sigma_u = np.array([0.1, 0.1, 0.1, 0.1, 0.1, 0.1])  # Noise for velocity model
+        sigma_u = np.array([0.03, 0.03, 0.03, 0.03, 0.03, 0.03])  # Noise for velocity model
         self.pf.predict(u=u, sigma_u=sigma_u, g_extra_args=(self.dt,))
 
     def dynamic_resampling(self):

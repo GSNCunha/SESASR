@@ -111,7 +111,7 @@ class RobotPF:
         if np.isscalar(z):
             z = np.asarray([z], float)
 
-            sigma_z = np.array(sigma_z) * 3.0
+            sigma_z = np.array(sigma_z) * 3.5
         # Evaluate the expected measurement and compute the residual, then update the state prediction
         z_hat = np.zeros((self.N, 2))
 
