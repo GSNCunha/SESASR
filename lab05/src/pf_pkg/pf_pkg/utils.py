@@ -160,10 +160,11 @@ def stratified_resample(weights):
 
 def systematic_resample(weights):
     N = len(weights)
-    print (">>>>>>>>>>>>>>>>>>doing systematic resampling")
+
     # make N subdivisions, choose positions 
     # with a consistent random offset
     positions = (np.arange(N) + np.random.random()) / N
+
     indexes = np.zeros(N, 'i')
     cumulative_sum = np.cumsum(weights)
     i, j = 0, 0

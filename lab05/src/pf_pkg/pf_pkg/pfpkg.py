@@ -12,11 +12,10 @@ from pf_pkg.utils import  (
     stratified_resample,
     systematic_resample,
     state_mean,
+    residual,
 )
 import yaml
 from visualization_msgs.msg import Marker, MarkerArray
-
-
 
 def load_landmarks(yaml_file):
     """
@@ -32,14 +31,13 @@ def load_landmarks(yaml_file):
     }
     return landmarks
 
-
 class ParticleFilterNode(Node):
     def __init__(self):
         super().__init__('particle_filter_node')
 
         # Declare parameters
-        self.declare_parameter('resampling_strategy', 'systematic')
-        self.declare_parameter('init_strategy', 'uniform')
+        # self.declare_parameter('resampling_strategy', 'systematic')
+        # self.declare_parameter('init_strategy', 'uniform')
         self.declare_parameter('landmarks_yaml', '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
 
         # Load landmarks
@@ -52,11 +50,11 @@ class ParticleFilterNode(Node):
             dim_x=3,  # [x, y, theta]
             dim_u=2,  # [v, w]
             eval_gux=sample_velocity_motion_model,
-            resampling_fn=self.dynamic_resampling,
+            resampling_fn= None,
             boundaries=[(-3.0, 3.0), (-3.0, 3.0), (-np.pi, np.pi)],  # Environment boundaries
             N=2000
         )
-        self.initialize_particles()
+        self.pf.initialize_particles()
 
         # Subscriptions
         self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
@@ -74,67 +72,15 @@ class ParticleFilterNode(Node):
         # Internal state
         self.latest_twist = None
         self.dt = 0.05  # Time step (20 Hz)
-
-    def initialize_particles(self):
-        """
-        Initialize particles based on the chosen strategy.
-        """
-        init_strategy = self.get_parameter('init_strategy').get_parameter_value().string_value
-
-        if init_strategy == "uniform":
-            for i in range(self.pf.dim_x):
-                self.pf.particles[:, i] = np.random.uniform(
-                    self.pf.boundaries[i][0], self.pf.boundaries[i][1], self.pf.N
-                )
-        elif init_strategy == "gaussian":
-            # Example: Gaussian initialization around [5.0, 5.0, 0.0] with standard deviations [1.0, 1.0, 0.1]
-            init_pose = [5.0, 5.0, 0.0]
-            std = [1.0, 1.0, 0.1]
-            for i in range(self.pf.dim_x):
-                self.pf.particles[:, i] = np.random.normal(init_pose[i], std[i], self.pf.N)
-        else:
-            raise ValueError(f"Unknown initialization strategy: {init_strategy}")
-
-        self.pf.weights = np.ones(self.pf.N) / self.pf.N
-
-    def publish_particles(self):
-        """
-        Publish particles as a MarkerArray for visualization in RViz.
-        """
-        marker_array = MarkerArray()
-        for i, particle in enumerate(self.pf.particles):
-            marker = Marker()
-            marker.header.stamp = self.get_clock().now().to_msg()
-            marker.header.frame_id = "odom"
-            marker.ns = "particles"
-            marker.id = i
-            marker.type = Marker.SPHERE
-            marker.action = Marker.ADD
-            marker.pose.position.x = particle[0]
-            marker.pose.position.y = particle[1]
-            marker.pose.position.z = 0.0
-            marker.pose.orientation.w = 1.0
-            marker.scale.x = 0.05  # Size of the sphere
-            marker.scale.y = 0.05
-            marker.scale.z = 0.05
-            marker.color.a = 1.0  # Alpha (transparency)
-            marker.color.r = 1.0  # Red
-            marker.color.g = 0.0  # Green
-            marker.color.b = 0.0  # Blue
-            marker_array.markers.append(marker)
-
-        # Publish the MarkerArray
-        self.pub_markers.publish(marker_array)
-
-
+        
     def cmd_vel_callback(self, msg):
         self.latest_twist = [msg.linear.x, msg.angular.z]
-
+        
     def landmarks_callback(self, msg):
         """
         Update particle weights based on landmark measurements.
         """
-        sigma_z = [0.026, 0.1]  # Measurement noise (range, bearing)
+        sigma_z = [0.01, 0.04]  # Measurement noise (range, bearing)
         for landmark_msg in msg.landmarks:
             z = [landmark_msg.range, landmark_msg.bearing]
             landmark_id = landmark_msg.id
@@ -146,82 +92,90 @@ class ParticleFilterNode(Node):
                 self.landmarks['x'][landmark_idx],
                 self.landmarks['y'][landmark_idx]
             ]
-            # print(f"Landmark Position: {landmark_pos}")
-
-            # Update particles with measurements
-            # print(f"Updating particles with z: {z}, sigma_z: {sigma_z}")
-            self.pf.update(
-                z=z,
-                sigma_z=sigma_z,
-                eval_hx=landmark_range_bearing_model,
-                hx_args=(landmark_pos, sigma_z)
-            )
+            if z is not None:
+                self.pf.update(
+                    z,
+                    sigma_z,
+                    landmark_range_bearing_model,
+                    hx_args=(landmark_pos, sigma_z)
+                )
             
-        self.pf.normalize_weights()
-        # print("Weights normalized")
-
-        # Dynamically select and pass the resampling function
-        if self.pf.neff() < self.pf.N / 2:
-            resampling_fn = self.dynamic_resampling()
-            print("Resampling particles")
-            self.pf.resampling(resampling_fn)  #No need to pass weights explicitly
-
-        # Estimate the state
-        self.pf.estimate()
-        # print(f"Estimated state: {self.pf.mu}")
-
-        # Publish the estimated state
-        # print("Publishing estimate")
-        self.publish_estimate()
-        self.publish_particles()
-
-
+            self.pf.normalize_weights()
+            
+            neff = self.pf.neff()   
+            
+            if neff < self.pf.N / 2:
+                self.pf.resampling(resampling_fn=systematic_resample, resampling_args=(self.pf.weights,))
+                assert np.allclose(self.pf.weights, 1 / self.pf.N)
+                
+            self.pf.estimate(mean_fn=state_mean, residual_fn=residual, angle_idx=2)
+            self.publish_estimate()
+            self.publish_particles()
+            
+            
     def run_prediction(self):
-        """
-        Predict the next particle state based on the latest velocity command.
-        """
-        if self.latest_twist is None:
-            return
-        u = self.latest_twist
-        sigma_u = np.array([0.03, 0.03, 0.03, 0.03, 0.03, 0.03])  # Noise for velocity model
-        self.pf.predict(u=u, sigma_u=sigma_u, g_extra_args=(self.dt,))
-
-    def dynamic_resampling(self):
-        """
-        Dynamically choose the resampling strategy.
-        """
-        resampling_strategy = self.get_parameter('resampling_strategy').get_parameter_value().string_value
-
-        strategy_map = {
-            "simple": simple_resample,
-            "residual": residual_resample,
-            "stratified": stratified_resample,
-            "systematic": systematic_resample,
-        }
-
-        if resampling_strategy not in strategy_map:
-            raise ValueError(f"Unknown resampling strategy: {resampling_strategy}")
-
-        return strategy_map[resampling_strategy]  # Return the correct resampling function
-
-
-
+            """
+            Predict the next particle state based on the latest velocity command.
+            """
+            if self.latest_twist is None:
+                return
+            
+            u = self.latest_twist
+            sigma_u = np.array([0.5, 0.5])  # Noise for velocity model
+            self.pf.predict(u=u, sigma_u=sigma_u, g_extra_args=(self.dt,))  
+            self.pf.estimate(mean_fn=state_mean, residual_fn=residual, angle_idx=2)
+            # self.publish_estimate()
+            # self.publish_particles()
+            
     def publish_estimate(self):
         """
-        Publish the estimated state to the /pf topic.
+        Publish the current particle filter estimate.
         """
-        odom_msg = Odometry()
-        odom_msg.header.stamp = self.get_clock().now().to_msg()
-        odom_msg.header.frame_id = "map"
-        odom_msg.pose.pose.position.x = self.pf.mu[0]
-        odom_msg.pose.pose.position.y = self.pf.mu[1]
-        odom_msg.pose.pose.orientation.z = np.sin(self.pf.mu[2] / 2)
-        odom_msg.pose.pose.orientation.w = np.cos(self.pf.mu[2] / 2)
-        self.pub_pf.publish(odom_msg)
-
+        msg = Odometry()
+        msg.header.stamp = self.get_clock().now().to_msg()
+        msg.header.frame_id = 'map'
+        msg.pose.pose.position.x = self.pf.mu[0]
+        msg.pose.pose.position.y = self.pf.mu[1]
+        msg.pose.pose.position.z = 0.0
+        msg.pose.pose.orientation.z = np.sin(self.pf.mu[2] / 2)
+        msg.pose.pose.orientation.w = np.cos(self.pf.mu[2] / 2)
+        self.pub_pf.publish(msg)
+    
+    def publish_particles(self):
+        
+        particles = self.pf.particles
+        markers = MarkerArray()
+        for i in range(particles.shape[0]):
+            marker = Marker()
+            marker.header.frame_id = 'odom'
+            marker.header.stamp = self.get_clock().now().to_msg()
+            marker.id = i
+            marker.type = Marker.ARROW
+            marker.action = Marker.ADD
+            marker.pose.position.x = particles[i, 0]
+            marker.pose.position.y = particles[i, 1]
+            marker.pose.position.z = 0.0
+            marker.pose.orientation.z = np.sin(particles[i, 2] / 2)
+            marker.pose.orientation.w = np.cos(particles[i, 2] / 2)
+            marker.scale.x = 0.1
+            marker.scale.y = 0.01
+            marker.scale.z = 0.01
+            marker.color.a = 1.0
+            marker.color.r = 0.0
+            marker.color.g = 0.5
+            marker.color.b = 0.8
+            markers.markers.append(marker)
+        self.pub_markers.publish(markers)   
+                    
 def main(args=None):
     rclpy.init(args=args)
     node = ParticleFilterNode()
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
+        
+            
+    
+ 
+            
+    

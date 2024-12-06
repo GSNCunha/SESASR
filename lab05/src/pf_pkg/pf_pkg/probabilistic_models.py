@@ -2,47 +2,49 @@ import math
 import numpy as np
 
 
-import numpy as np
-
 def sample_velocity_motion_model(x, u, a, dt):
-    """
-    Sample velocity motion model.
+    """Sample velocity motion model.
     Arguments:
     x -- pose of the robot before moving [x, y, theta]
     u -- velocity reading obtained from the robot [v, w]
-    a -- noise parameters of the motion model [a1, a2, a3, a4, a5, a6]
+    a -- noise parameters of the motion model [a1, a2, a3, a4, a5, a6] or [std_dev_v, std_dev_w]
     dt -- time interval of prediction
     """
-    a = np.array(a)
 
+    # Ensure 'x' and 'u' are NumPy arrays
     if isinstance(x, list):
         x = np.array(x)
-
-    if x.ndim == 1:  # Manage the case of a single pose
-        x = x.reshape(1, -1)
-
     if isinstance(u, list):
         u = np.array(u)
+    if isinstance(a, list):
+        a = np.array(a)
 
-    # Add random noise to the velocity and angular velocity
-    v_hat = np.ones(x.shape[0]) * u[0] + np.random.normal(0, a[0] * u[0]**2 + a[1] * u[1]**2, x.shape[0])
-    w_hat = np.ones(x.shape[0]) * u[1] + np.random.normal(0, a[2] * u[0]**2 + a[3] * u[1]**2, x.shape[0])
+    if x.ndim == 1:  # manage the case of a single pose
+        x = x.reshape(1, -1)
 
-    # Avoid division by zero and sanitize invalid values
-    w_hat = np.where(np.abs(w_hat) < 1e-6, 1e-6, w_hat)  # Replace near-zero w_hat with a small value
-    w_hat = np.nan_to_num(w_hat, nan=1e-6, posinf=1e-6, neginf=-1e-6)  # Replace NaN or Inf with valid values
+    sigma = np.ones((3))
+    if a.shape == u.shape:
+        sigma[:-1] = a[:]
+        sigma[-1] = a[1] * 0.5
+    else:
+        sigma[0] = a[0] * u[0] ** 2 + a[1] * u[1] ** 2
+        sigma[1] = a[2] * u[0] ** 2 + a[3] * u[1] ** 2
+        sigma[2] = a[4] * u[0] ** 2 + a[5] * u[1] ** 2
 
-    gamma_hat = np.random.normal(0, a[4] * u[0]**2 + a[5] * u[1]**2, x.shape[0])
+    v_hat = np.ones(x.shape[0]) * u[0] + np.random.normal(0, sigma[0], x.shape[0])
+    w_hat = np.ones(x.shape[0]) * u[1] + np.random.normal(0, sigma[1], x.shape[0])
+    gamma_hat = np.random.normal(0, sigma[2], x.shape[0])
+
+    # Add a small epsilon to w_hat to avoid division by zero
+    epsilon = 1e-6
+    w_hat = np.where(np.abs(w_hat) < epsilon, epsilon, w_hat)
 
     r = v_hat / w_hat
 
-    # Update particles using the velocity motion model
     x_prime = x[:, 0] - r * np.sin(x[:, 2]) + r * np.sin(x[:, 2] + w_hat * dt)
     y_prime = x[:, 1] + r * np.cos(x[:, 2]) - r * np.cos(x[:, 2] + w_hat * dt)
     theta_prime = x[:, 2] + w_hat * dt + gamma_hat * dt
-
     return np.squeeze(np.stack([x_prime, y_prime, theta_prime], axis=-1))
-
 
 
 def get_odometry_command(odom_pose, odom_pose_prev):

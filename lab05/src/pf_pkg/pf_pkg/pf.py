@@ -111,7 +111,9 @@ class RobotPF:
         if np.isscalar(z):
             z = np.asarray([z], float)
 
-            sigma_z = np.array(sigma_z) * 3.5
+        # Convert sigma_z to a NumPy array
+        sigma_z = np.array(sigma_z) * 3.0
+
         # Evaluate the expected measurement and compute the residual, then update the state prediction
         z_hat = np.zeros((self.N, 2))
 
@@ -164,15 +166,12 @@ class RobotPF:
         self.mu = mu
         self.Sigma = Sigma
 
-    def resampling(self, resampling_fn):
+    def resampling(self, resampling_fn, resampling_args=()):
         """
-        Perform particle resampling.
+        Estimate the state of the robot
         """
-        # Use the particle weights directly
-        indexes = resampling_fn(self.weights)
-
-        # Resample particles according to indexes
+        indexes = resampling_fn(*resampling_args)
+        # resample according to indexes
         self.particles[:] = self.particles[indexes]
-        self.weights = np.ones(len(self.particles)) / len(self.particles)  # Reset weights to uniform distribution
-
-
+        self.weights.resize(len(self.particles))
+        self.weights.fill(1.0 / len(self.weights))
