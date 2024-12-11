@@ -117,7 +117,7 @@ class ParticleFilterNode(Node):
         """
         Update particle weights based on landmark measurements.
         """
-        sigma_z = [0.2, 0.2]  # Measurement noise (range, bearing)
+        sigma_z = [0.05, 0.2]  # Measurement noise (range, bearing)
         for landmark_msg in msg.landmarks:
             z = [landmark_msg.range, landmark_msg.bearing]
             landmark_id = landmark_msg.id
