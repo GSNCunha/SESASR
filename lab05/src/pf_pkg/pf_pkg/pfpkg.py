@@ -52,7 +52,7 @@ class ParticleFilterNode(Node):
             eval_gux=sample_velocity_motion_model,
             resampling_fn= None,
              boundaries=[(-0.9, 2.7), (-1.7, 1.2), (-np.pi, np.pi)],
-            N=6000
+            N=2000
         )
         self.pf.initialize_particles()
 
