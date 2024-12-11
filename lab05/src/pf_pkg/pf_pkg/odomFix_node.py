@@ -17,7 +17,7 @@ class OdomFixNode(Node):
         self.angular_velocity = 0.0
 
         # Variáveis para controlar o tempo de simulação
-        self.dt = 0.1  # Intervalo de tempo para cada atualização (10 Hz)
+        self.dt = 0.01  # Intervalo de tempo para cada atualização (10 Hz)
 
         # Assinatura do tópico de velocidades
         self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
