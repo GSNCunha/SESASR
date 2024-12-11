@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'pf_node = pf_pkg.pfpkg:main',
+            'odom_fix = pf_pkg.odomFix_node:main',
         ],
     },
 )

@@ -38,7 +38,7 @@ class ParticleFilterNode(Node):
         # Declare parameters
         # self.declare_parameter('resampling_strategy', 'systematic')
         # self.declare_parameter('init_strategy', 'uniform')
-        self.declare_parameter('landmarks_yaml', '/home/thilevin/sesasr/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks.yaml')
+        self.declare_parameter('landmarks_yaml', '/root/SESASR/lab05/src/pf_pkg/pf_pkg/landmarks1.yaml')
 
         # Load landmarks
         landmarks_yaml = self.get_parameter('landmarks_yaml').get_parameter_value().string_value
@@ -51,23 +51,26 @@ class ParticleFilterNode(Node):
             dim_u=2,  # [v, w]
             eval_gux=sample_velocity_motion_model,
             resampling_fn= None,
-            boundaries=[(-3.0, 3.0), (-3.0, 3.0), (-np.pi, np.pi)],  # Environment boundaries
-            N=2000
+             boundaries=[(-0.9, 2.7), (-1.7, 1.2), (-np.pi, np.pi)],
+            N=6000
         )
         self.pf.initialize_particles()
 
         # Subscriptions
         self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
-        self.create_subscription(LandmarkArray, '/landmarks', self.landmarks_callback, 10)
-        
+        self.create_subscription(LandmarkArray, 'camera/landmarks', self.landmarks_callback, 10)
 
         # Publisher
-        self.pub_pf = self.create_publisher(Odometry, '/pf', 10)
-        self.pub_markers = self.create_publisher(MarkerArray, '/particles', 10)
-
+        self.pub_pf = self.create_publisher(Odometry, '/pf_home', 10)
+        self.pub_markers = self.create_publisher(MarkerArray, '/particles_home', 10)
+        self.pub_landmark_markers = self.create_publisher(MarkerArray, '/landmark_markers', 10)
 
         # Timer for prediction step (20 Hz)
         self.create_timer(0.05, self.run_prediction)
+
+
+        self.publish_landmarks()
+
 
         # Internal state
         self.latest_twist = None
@@ -75,12 +78,46 @@ class ParticleFilterNode(Node):
         
     def cmd_vel_callback(self, msg):
         self.latest_twist = [msg.linear.x, msg.angular.z]
+
+    def publish_landmarks(self):
+        """
+        Publish the landmarks as MarkerArray for visualization in RViz.
+        """
+        markers = MarkerArray()
+        for i, landmark_id in enumerate(self.landmarks['id']):
+            marker = Marker()
+            marker.header.frame_id = 'odom'
+            marker.header.stamp = self.get_clock().now().to_msg()
+            marker.id = i
+            marker.type = Marker.SPHERE
+            marker.action = Marker.ADD
+
+            marker.pose.position.x = self.landmarks['x'][i]
+            marker.pose.position.y = self.landmarks['y'][i]
+            marker.pose.position.z = self.landmarks['z'][i]
+            marker.pose.orientation.x = 0.0
+            marker.pose.orientation.y = 0.0
+            marker.pose.orientation.z = 0.0
+            marker.pose.orientation.w = 1.0
+
+            marker.scale.x = 0.2
+            marker.scale.y = 0.2
+            marker.scale.z = 0.2
+
+            marker.color.a = 1.0  # Opacidade
+            marker.color.r = 1.0  # Vermelho
+            marker.color.g = 0.0  # Verde
+            marker.color.b = 0.0  # Azul
+
+            markers.markers.append(marker)
+
+        self.pub_landmark_markers.publish(markers)
         
     def landmarks_callback(self, msg):
         """
         Update particle weights based on landmark measurements.
         """
-        sigma_z = [0.01, 0.04]  # Measurement noise (range, bearing)
+        sigma_z = [0.2, 0.2]  # Measurement noise (range, bearing)
         for landmark_msg in msg.landmarks:
             z = [landmark_msg.range, landmark_msg.bearing]
             landmark_id = landmark_msg.id
@@ -121,7 +158,7 @@ class ParticleFilterNode(Node):
                 return
             
             u = self.latest_twist
-            sigma_u = np.array([0.5, 0.5])  # Noise for velocity model
+            sigma_u = np.array([2, 2])  # Noise for velocity model
             self.pf.predict(u=u, sigma_u=sigma_u, g_extra_args=(self.dt,))  
             self.pf.estimate(mean_fn=state_mean, residual_fn=residual, angle_idx=2)
             # self.publish_estimate()
