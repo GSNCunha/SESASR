@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'dwa= dwa_pkg.dwa_node:main',
         ],
     },
 )

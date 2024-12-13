@@ -1,6 +1,6 @@
 import numpy as np
 import math
-from utils import Differential_drive_robot, normalize_angle, normalize, calc_nearest_obs
+from .utils import Differential_drive_robot, normalize_angle, normalize, calc_nearest_obs
 
 # DWA
 class DWA():

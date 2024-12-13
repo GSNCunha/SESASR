@@ -80,49 +80,68 @@ class LaserScanSensor:
         self.tot_num_points = tot_num_points
         self.num_points = num_points
 
-    def process_data(self, points):
-        """Filter outlier values from ranges, subsample the desired num of ranges, saturate to max_dist"""
+    def process_data(self, ranges):
+        """
+        Process raw LiDAR ranges:
+        - Remove NaN and Inf values
+        - Saturate the distances between min_dist and max_dist
+        - Filter to keep only `num_points` ranges, choosing the minimum distance for each sector
+        """
+        # Step 1: Replace NaN and Inf
+        ranges = np.array(ranges)
+        ranges[np.isnan(ranges)] = self.max_dist  # Replace NaNs with max_dist
+        ranges[np.isinf(ranges)] = self.min_dist  # Replace Infs with min_dist
 
-        # Clean scan data from nan and inf data
+        # Step 2: Saturate the ranges between min_dist and max_dist
+        ranges = np.clip(ranges, self.min_dist, self.max_dist)
 
-        # Saturate ranges between min_dist and max_dist values
+        # Step 3: Downsample the ranges to num_points
+        # Divide the ranges into angular sectors and take the minimum value in each sector
+        sector_size = int(np.ceil(self.tot_num_points / self.num_points))
+        filtered_ranges = [
+            np.min(ranges[i:i + sector_size])
+            for i in range(0, self.tot_num_points, sector_size)
+        ]
 
-        # Filter scan ranges and takes only num_points, choosing the minimum value
-        # for each angular sector
-        scan_range = ...
+        # Ensure the output has exactly num_points
+        filtered_ranges = np.array(filtered_ranges[:self.num_points])
 
-        return scan_range
+        return filtered_ranges
 
-def range_to_obstacles(ranges, robot_pose, num_rays, fov=2*np.pi):
-    """""
-    Compute the endpoint map coordinate from the scan range sensed
-    """""
-    robot_x, robot_y, robot_angle = robot_pose[:]
+def range_to_obstacles(ranges, robot_pose, num_rays, fov=2 * np.pi):
+    """
+    Convert LiDAR scan ranges into [x, y] obstacle coordinates in the map frame.
+    Parameters:
+    - ranges: Filtered LiDAR ranges
+    - robot_pose: [x, y, theta] of the robot in the map frame
+    - num_rays: Number of rays (points) to consider
+    - fov: Field of view of the LiDAR (default: 360° or 2π radians)
+    Returns:
+    - end_points: A (num_rays x 2) array with [x, y] obstacle positions
+    """
+    robot_x, robot_y, robot_angle = robot_pose
 
-    # define start angle of FOV and step angle
-    start_angle = ...
-    step_angle = ...
-    
-    # loop over casted rays and compute end points in the map [x,y]
+    # Define the start angle and step angle for the rays
+    start_angle = robot_angle - fov / 2
+    step_angle = fov / num_rays
+
+    # Compute the [x, y] coordinates of each obstacle
     end_points = np.zeros((num_rays, 2))
-    
-    end_points = ...
+    for i, r in enumerate(ranges):
+        angle = start_angle + i * step_angle
+        x = robot_x + r * np.cos(angle)
+        y = robot_y + r * np.sin(angle)
+        end_points[i] = [x, y]
 
     return end_points
 
 def normalize_angle(theta):
     """
-    Normalize angles between [-pi, pi)
+    Normalize angles to the range [-π, π).
     """
-    theta = theta % (2 * np.pi)  # force in range [0, 2 pi)
-    if np.isscalar(theta):
-        if theta > np.pi:  # move to [-pi, pi)
-            theta -= 2 * np.pi
-    else:
-        theta_ = theta.copy()
-        theta_[theta>np.pi] -= 2 * np.pi
-        return theta_
-    
+    theta = theta % (2 * np.pi)  # Force into [0, 2π)
+    if theta > np.pi:  # Map to [-π, π)
+        theta -= 2 * np.pi
     return theta
 
 def normalize(arr: np.ndarray):
