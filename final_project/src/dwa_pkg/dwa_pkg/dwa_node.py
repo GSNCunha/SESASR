@@ -4,7 +4,7 @@ import numpy as np
 from dwa_pkg.dwa import *
 from dwa_pkg.utils import *
 from sensor_msgs.msg import LaserScan
-from geometry_msgs.msg import Pose
+from nav_msgs.msg import Odometry
 
 
 class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
@@ -49,7 +49,7 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         self.timer = self.create_timer(0.1, self.update_robot_pose)
 
         self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
-        self.create_subscription(Pose, '/dynamic_goal_pose', self.goal_pose_callback, 10)
+        self.create_subscription(Odometry, '/dynamic_goal_pose', self.goal_pose_callback, 10)
 
         # Tracking the state
         self.done = False
@@ -65,8 +65,8 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
                     self.get_logger().info("Goal reached!")
                 else:
                     self.get_logger().info(f"Updating robot pose. Current pose: {self.controller.robot.pose}")
-            else:
-                self.get_logger().info("Goal is at the origin, skipping movement.")
+            ##else:
+                ##self.get_logger().info("Goal is at the origin, skipping movement.")
 
 
     def scan_callback(self, msg):
@@ -85,15 +85,19 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         self.controller.obstacles_map = obstacles
 
     def goal_pose_callback(self, msg):
+        self.get_logger().info(f"Received Odometry message")
         """
         Callback to update the goal pose based on the incoming message.
         """
-        # Extract the goal position from the Pose message
-        self.goal_pose = np.array([msg.position.x, msg.position.y])
+        # Extract the goal position from the Odometry message
+        self.goal_pose = np.array([msg.pose.pose.position.x, msg.pose.pose.position.y])
         self.get_logger().info(f"Updated goal pose: {self.goal_pose}")
 
-        # Set the goal in the controller, enabling it to act on the new goal
-        self.controller.set_goal(self.goal_pose)
+        # Directly set the goal pose in the controller (if 'set_goal' does not exist)
+        self.controller.goal_pose = self.goal_pose
+
+
+
 
 
 def main(args=None):

@@ -138,11 +138,14 @@ def range_to_obstacles(ranges, robot_pose, num_rays, fov=2 * np.pi):
 def normalize_angle(theta):
     """
     Normalize angles to the range [-π, π).
+    If theta is an array, normalize each element.
     """
-    theta = theta % (2 * np.pi)  # Force into [0, 2π)
-    if theta > np.pi:  # Map to [-π, π)
-        theta -= 2 * np.pi
-    return theta
+    # If theta is an array, apply normalize_angle element-wise
+    if isinstance(theta, np.ndarray):
+        return np.vectorize(lambda x: (x % (2 * np.pi) - np.pi) if x > np.pi else x)(theta)
+    else:
+        # Scalar version (as before)
+        return (theta % (2 * np.pi)) - np.pi if theta > np.pi else theta
 
 def normalize(arr: np.ndarray):
     """ normalize array of values """
