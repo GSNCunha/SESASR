@@ -5,6 +5,7 @@ from dwa_pkg.dwa import *
 from dwa_pkg.utils import *
 from sensor_msgs.msg import LaserScan
 from nav_msgs.msg import Odometry
+from geometry_msgs.msg import Twist
 
 
 class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
@@ -50,7 +51,7 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
 
         self.create_subscription(LaserScan, '/scan', self.scan_callback, 10)
         self.create_subscription(Odometry, '/dynamic_goal_pose', self.goal_pose_callback, 10)
-
+        self.cmd_vel_pub = self.create_publisher(Twist, '/cmd_vel', 10)
         # Tracking the state
         self.done = False
         self.robot_poses = None
@@ -58,15 +59,21 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
     def update_robot_pose(self):
         if not self.done:
             # Check if the goal is not [0.0, 0.0] with a tolerance
-            if not np.allclose(self.goal_pose, [0.0, 0.0], atol=1e-3):  # Tolerance of 1e-3 for small precision differences
+            if not np.allclose(self.goal_pose, [0.0, 0.0], atol=1e-3):
                 self.done, self.robot_poses = self.controller.go_to_pose(self.goal_pose)
 
                 if self.done:
                     self.get_logger().info("Goal reached!")
                 else:
                     self.get_logger().info(f"Updating robot pose. Current pose: {self.controller.robot.pose}")
-            ##else:
-                ##self.get_logger().info("Goal is at the origin, skipping movement.")
+
+                    # After computing the velocity command, publish to cmd_vel
+                    v, w = self.controller.compute_cmd(self.goal_pose, self.controller.robot.pose, self.controller.obstacles)
+                    cmd_vel_msg = Twist()
+                    cmd_vel_msg.linear.x = v
+                    cmd_vel_msg.angular.z = w
+                    self.cmd_vel_pub.publish(cmd_vel_msg)
+
 
 
     def scan_callback(self, msg):
@@ -85,13 +92,13 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         self.controller.obstacles_map = obstacles
 
     def goal_pose_callback(self, msg):
-        self.get_logger().info(f"Received Odometry message")
+        #self.get_logger().info(f"Received Odometry message")
         """
         Callback to update the goal pose based on the incoming message.
         """
         # Extract the goal position from the Odometry message
         self.goal_pose = np.array([msg.pose.pose.position.x, msg.pose.pose.position.y])
-        self.get_logger().info(f"Updated goal pose: {self.goal_pose}")
+        #self.get_logger().info(f"Updated goal pose: {self.goal_pose}")
 
         # Directly set the goal pose in the controller (if 'set_goal' does not exist)
         self.controller.goal_pose = self.goal_pose
