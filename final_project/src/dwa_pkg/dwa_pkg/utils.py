@@ -89,8 +89,8 @@ class LaserScanSensor:
         """
         # Step 1: Replace NaN and Inf
         ranges = np.array(ranges)
-        ranges[np.isnan(ranges)] = self.min_dist   # Replace NaNs with min_dist
-        ranges[np.isinf(ranges)] = self.max_dist  # Replace Infs with max_dist
+        ranges[np.isnan(ranges)] = 3.5  # Replace NaNs with min_dist
+        ranges[np.isinf(ranges)] =  3.5 # Replace Infs with max_dist
 
         # Step 2: Saturate the ranges between min_dist and max_dist
         ranges = np.clip(ranges, self.min_dist, self.max_dist)
@@ -128,10 +128,11 @@ def range_to_obstacles(ranges, robot_pose, num_rays, fov=2 * np.pi):
     # Compute the [x, y] coordinates of each obstacle
     end_points = np.zeros((num_rays, 2))
     for i, r in enumerate(ranges):
-        angle = start_angle + i * step_angle
-        x = robot_x + r * np.cos(angle)
-        y = robot_y + r * np.sin(angle)
-        end_points[i] = [x, y]
+        if ranges[i] != 3.5:
+            angle = start_angle + i * step_angle
+            x = robot_x + r * np.cos(angle)
+            y = robot_y + r * np.sin(angle)
+            end_points[i] = [x, y]
 
     return end_points
 
