@@ -67,6 +67,9 @@ class DWA():
 
             # 3. Compute command for the robot with DWA controller
             u = self.compute_cmd(goal_pose, self.robot.pose, self.obstacles)
+
+            # 4. Send the command or update the robot pose
+            pose = self.robot.update_state(u, self.dt)
             
             # 5. Provide intermediate task feedback
             if steps % self.feedback_rate == 0:

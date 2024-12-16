@@ -25,17 +25,17 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
             w_samples=20,
             goal_dist_tol=0.2,
             collision_tol=0.2,
-            weight_angle=0.1,
-            weight_vel=0.2,
-            weight_obs=0.08,
+            weight_angle= 0.1,
+            weight_vel= 10,
+            weight_obs= 0.1,
             obstacles_map=np.empty((0, 2)),
             init_pose=self.init_pose,
             max_linear_acc=0.5,
-            max_ang_acc=3.2,
-            max_lin_vel=0.5,  # m/s
-            min_lin_vel=0.0,  # m/s
-            max_ang_vel=3.0,  # rad/s
-            min_ang_vel=-3.0,  # rad/s
+            max_ang_acc= 3.2,
+            max_lin_vel= 0.22,  # m/s
+            min_lin_vel= 0.0,  # m/s
+            max_ang_vel= 2.84,  # rad/s
+            min_ang_vel=-2.84,  # rad/s
             radius=0.3,  # m
         )
 
@@ -69,22 +69,20 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         self.controller.robot.pose = np.array([x, y, theta])
 
     def update_robot_pose(self):
-        if not self.done:
-            # Check if the goal is not [0.0, 0.0] with a tolerance
-            if not np.allclose(self.goal_pose, [0.0, 0.0], atol=1e-3):
-                self.done, self.robot_poses = self.controller.go_to_pose(self.goal_pose)
 
-                if self.done:
-                    self.get_logger().info("Goal reached!")
-                else:
-                    self.get_logger().info(f"Updating robot pose. Current pose: {self.controller.robot.pose}")
 
-                    # After computing the velocity command, publish to cmd_vel
-                    v, w = self.controller.compute_cmd(self.goal_pose, self.controller.robot.pose, self.controller.obstacles)
-                    cmd_vel_msg = Twist()
-                    cmd_vel_msg.linear.x = v
-                    cmd_vel_msg.angular.z = w
-                    self.cmd_vel_pub.publish(cmd_vel_msg)
+        dist_to_goal = np.linalg.norm(self.controller.robot.pose[0:2] - self.goal_pose)
+        if dist_to_goal < self.controller.goal_dist_tol:
+            print("Goal reached!")
+
+        u = self.controller.compute_cmd(self.goal_pose, self.controller.robot.pose, self.controller.obstacles )
+
+        cmd_vel_msg = Twist()
+        cmd_vel_msg.linear.x = u[0]
+        cmd_vel_msg.angular.z = u[1]
+        self.get_logger().info(f"v: {u[0]}, w: {u[1]}")
+        self.cmd_vel_pub.publish(cmd_vel_msg)
+
 
 
 
@@ -101,7 +99,7 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         obstacles = range_to_obstacles(filtered_ranges, robot_pose, self.laser_sensor.num_points)
 
         # Update obstacles in DWA controller
-        self.controller.obstacles_map = obstacles
+        self.controller.obstacles = obstacles
 
     def goal_pose_callback(self, msg):
         #self.get_logger().info(f"Received Odometry message")
