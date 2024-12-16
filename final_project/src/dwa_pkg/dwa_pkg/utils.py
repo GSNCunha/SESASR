@@ -122,7 +122,7 @@ def range_to_obstacles(ranges, robot_pose, num_rays, fov=2 * np.pi):
     robot_x, robot_y, robot_angle = robot_pose
 
     # Define the start angle and step angle for the rays
-    start_angle = robot_angle - fov / 2
+    start_angle = robot_angle
     step_angle = fov / num_rays
 
     # Compute the [x, y] coordinates of each obstacle
