@@ -75,7 +75,6 @@ class DWA():
             if steps % self.feedback_rate == 0:
                 dist_to_goal = np.linalg.norm(self.robot.pose[0:2] - goal_pose)
                 print("Current distance to goal ", dist_to_goal, " at step ", steps)
-                print("Current Robot pose: ", pose)
 
             steps += 1
 
