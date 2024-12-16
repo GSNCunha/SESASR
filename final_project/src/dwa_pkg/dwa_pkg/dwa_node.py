@@ -16,8 +16,8 @@ class DWANode(Node):
         # Initial robot pose, goal pose, and obstacles
         self.init_pose = np.array([0.0, 0.0, 0.0])
 
-        self.goal_pose = np.array([0.0, 0.0])
-
+        self.goal_pose = np.array([99.0, 99.0])
+        self.status = None
         # Initialize the DWA controller
         self.controller = DWA(
             dt=0.1,
@@ -58,9 +58,12 @@ class DWANode(Node):
         self.create_subscription(Odometry, '/dynamic_goal_pose', self.goal_pose_callback, 10)
         self.create_subscription(Odometry, '/odom', self.odom_callback, 10)
 
-        self.timer = self.create_timer(0.1, self.update_robot_pose)
+        self.timer = self.create_timer(1/15, self.update_robot_pose)
         self.done = False
         self.robot_poses = None
+
+        # Counter for interactions
+        self.interaction_count = 0
 
     def odom_callback(self, msg):
         x = msg.pose.pose.position.x
@@ -69,8 +72,28 @@ class DWANode(Node):
         self.controller.robot.pose = np.array([x, y, theta])
 
     def update_robot_pose(self):
+        # Increment the counter
+        self.interaction_count += 1
+
+        # Check if interaction count has exceeded 3000
+        if self.interaction_count > 3000:
+            self.get_logger().info("Timeout reached! Stopping the robot.")
+            self.status = "timeout"
+            self.stop_robot()
+            return
+        
         dist_to_goal = np.linalg.norm(self.controller.robot.pose[0:2] - self.goal_pose)
+    	
+        if self.status == "collision":
+            self.stop_robot()
+            self.task_result = "collision"
+            return
+        if self.interaction_count % 50 == 0:
+            self.get_logger().info(f"Distance_to_goal:{dist_to_goal}")
+
+
         if dist_to_goal < self.controller.goal_dist_tol:
+            self.status = "goal_reached"
             print("Goal reached!")
 
         u = self.controller.compute_cmd(self.goal_pose, self.controller.robot.pose, self.controller.obstacles)
@@ -79,14 +102,25 @@ class DWANode(Node):
         cmd_vel_msg.linear.x = u[0]
         cmd_vel_msg.angular.z = u[1]
         self.controller.robot.vel = u
-        self.get_logger().info(f"v: {u[0]}, w: {u[1]}")
+        ##self.get_logger().info(f"v: {u[0]}, w: {u[1]}")
+        self.cmd_vel_pub.publish(cmd_vel_msg)
+        
+    def stop_robot(self):
+        # Send a stop command to the robot
+        cmd_vel_msg = Twist()
+        cmd_vel_msg.linear.x = 0.0
+        cmd_vel_msg.angular.z = 0.0
         self.cmd_vel_pub.publish(cmd_vel_msg)
 
     def scan_callback(self, msg):
         # Process LiDAR ranges
         ranges = np.array(msg.ranges)
         filtered_ranges = self.laser_sensor.process_data(ranges)
-
+        
+        if np.min(filtered_ranges) < self.controller.collision_tol:
+            self.status = "collision"
+            self.get_logger().info("Collision detected. Robot stopped.")
+            return
         # Convert ranges to obstacle coordinates
         robot_pose = [self.controller.robot.pose[0], self.controller.robot.pose[1], self.controller.robot.pose[2]]
         obstacles = range_to_obstacles(filtered_ranges, robot_pose, self.laser_sensor.num_points)
@@ -125,14 +159,20 @@ class DWANode(Node):
             marker_array.markers.append(marker)
 
         self.marker_pub.publish(marker_array)
+        
 
 
 def main(args=None):
     rclpy.init(args=args)
     dwa_node = DWANode()
     rclpy.spin(dwa_node)
-    dwa_node.destroy_node()
     rclpy.shutdown()
+    if dwa_node.status:
+            print(f"Task result: {dwa_node.task_result}")
+    else:
+        print("Task ended without a result.")
+        dwa_node.destroy_node()
+        rclpy.shutdown()
 
 
 if __name__ == '__main__':
