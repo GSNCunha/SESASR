@@ -21,7 +21,7 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         self.controller = DWA(
             dt=0.1,
             sim_time=2.0,
-            v_samples=10,
+            v_samples=30,
             w_samples=20,
             goal_dist_tol=0.2,
             collision_tol=0.2,
@@ -80,6 +80,7 @@ class DWANode(Node):  # Renamed to avoid overwriting the imported DWA class
         cmd_vel_msg = Twist()
         cmd_vel_msg.linear.x = u[0]
         cmd_vel_msg.angular.z = u[1]
+        self.controller.robot.vel = u
         self.get_logger().info(f"v: {u[0]}, w: {u[1]}")
         self.cmd_vel_pub.publish(cmd_vel_msg)
 
