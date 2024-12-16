@@ -89,8 +89,8 @@ class LaserScanSensor:
         """
         # Step 1: Replace NaN and Inf
         ranges = np.array(ranges)
-        ranges[np.isnan(ranges)] = self.max_dist  # Replace NaNs with max_dist
-        ranges[np.isinf(ranges)] = self.min_dist  # Replace Infs with min_dist
+        ranges[np.isnan(ranges)] = self.min_dist   # Replace NaNs with min_dist
+        ranges[np.isinf(ranges)] = self.max_dist  # Replace Infs with max_dist
 
         # Step 2: Saturate the ranges between min_dist and max_dist
         ranges = np.clip(ranges, self.min_dist, self.max_dist)
