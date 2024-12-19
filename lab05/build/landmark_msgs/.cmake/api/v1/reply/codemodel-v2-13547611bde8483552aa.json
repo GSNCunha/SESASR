@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-a7d2c3c1fcf457b234c0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "landmark_msgs__py",
+					"jsonFile" : "directory-landmark_msgs__py-a8ccb161c2777b2f9e47.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/s2c2/Desktop/SESASR/lab05/build/landmark_msgs/landmark_msgs__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "landmark_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_landmark_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_landmark_msgs_egg-dc0bbf6ae68832638194.json",
+					"name" : "ament_cmake_python_build_landmark_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_landmark_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_landmark_msgs-990c07485037c51c6f26.json",
+					"name" : "ament_cmake_python_copy_landmark_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs-20d371c9453a6a0835dd.json",
+					"name" : "landmark_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__cpp-cdd9aa45957b814e18a5.json",
+					"name" : "landmark_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "landmark_msgs__py::@f7ca01dd307afcd72e13",
+					"jsonFile" : "target-landmark_msgs__py-a02bc090239cd4f348d8.json",
+					"name" : "landmark_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_generator_c-5ae8788c5de09f2f8aca.json",
+					"name" : "landmark_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_generator_py-c52ef17b97db0d691de3.json",
+					"name" : "landmark_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_c-c49abc4571c3bfef76e5.json",
+					"name" : "landmark_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_c__pyext-af8354aa1bcc56e39119.json",
+					"name" : "landmark_msgs__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_cpp-bb679bc649bf43a21d18.json",
+					"name" : "landmark_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_fastrtps_c-a89490c08e2977637e85.json",
+					"name" : "landmark_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_fastrtps_c__pyext-7039e2d39e6897b41ed2.json",
+					"name" : "landmark_msgs__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_fastrtps_cpp-a7ea659607ac0282ab60.json",
+					"name" : "landmark_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_introspection_c-0e3325c0d30c06b33f97.json",
+					"name" : "landmark_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_introspection_c__pyext-c6fa5ef73d4cfc4d0d48.json",
+					"name" : "landmark_msgs__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs__rosidl_typesupport_introspection_cpp-830a5eb967750c4633e7.json",
+					"name" : "landmark_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "landmark_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-landmark_msgs_uninstall-17dcec91b38cf93cb6e1.json",
+					"name" : "landmark_msgs_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-321b13b98cbe18a7e852.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/s2c2/Desktop/SESASR/lab05/build/landmark_msgs",
+		"source" : "/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/landmark_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

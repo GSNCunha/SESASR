@@ -212,12 +212,14 @@ class DWA():
         return score_angle
 
     def score_vel(self, u, path, goal_pose):
-
+        
         vel = u[:,0]
         dist_to_goal = np.linalg.norm(path[:, -1, 0:2] - goal_pose, axis=-1)
-        score = vel + np.exp(-dist_to_goal / self.goal_dist_tol)
+        k = 6
+        slowdown_factor = np.exp(k*(-self.goal_dist_tol/dist_to_goal))
+        score = vel*slowdown_factor + np.exp((-dist_to_goal / self.goal_dist_tol))
         return score
-        # return vel
+        #return vel
 
     def score_obstacles(self, path, obstacles):
         # obstacle avoidance

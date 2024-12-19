@@ -16,7 +16,7 @@ class DWANode(Node):
         # Initial robot pose, goal pose, and obstacles
         self.init_pose = np.array([0.0, 0.0, 0.0])
 
-        self.goal_pose = np.array([99.0, 99.0])
+        self.goal_pose = np.array([2, 0])
         self.status = None
         # Initialize the DWA controller
         self.controller = DWA(
@@ -25,10 +25,10 @@ class DWANode(Node):
             v_samples=30,
             w_samples=20,
             goal_dist_tol=0.2,
-            collision_tol=0.2,
+            collision_tol=0.15,
             weight_angle=0.1,
-            weight_vel=10,
-            weight_obs=0.1,
+            weight_vel= 0.6,
+            weight_obs=0.05,
             obstacles_map=np.empty((0, 2)),
             init_pose=self.init_pose,
             max_linear_acc=0.5,
@@ -77,13 +77,13 @@ class DWANode(Node):
 
         # Check if interaction count has exceeded 3000
         if self.interaction_count > 3000:
-            self.get_logger().info("Timeout reached! Stopping the robot.")
+            #self.get_logger().info("Timeout reached! Stopping the robot.")
             self.status = "timeout"
             self.stop_robot()
             return
         
         dist_to_goal = np.linalg.norm(self.controller.robot.pose[0:2] - self.goal_pose)
-    	
+
         if self.status == "collision":
             self.stop_robot()
             self.task_result = "collision"
@@ -102,7 +102,7 @@ class DWANode(Node):
         cmd_vel_msg.linear.x = u[0]
         cmd_vel_msg.angular.z = u[1]
         self.controller.robot.vel = u
-        ##self.get_logger().info(f"v: {u[0]}, w: {u[1]}")
+        self.get_logger().info(f"v: {u[0]},goal:{dist_to_goal}")
         self.cmd_vel_pub.publish(cmd_vel_msg)
         
     def stop_robot(self):
@@ -119,7 +119,7 @@ class DWANode(Node):
         
         if np.min(filtered_ranges) < self.controller.collision_tol:
             self.status = "collision"
-            self.get_logger().info("Collision detected. Robot stopped.")
+            #self.get_logger().info("Collision detected. Robot stopped.")
             return
         # Convert ranges to obstacle coordinates
         robot_pose = [self.controller.robot.pose[0], self.controller.robot.pose[1], self.controller.robot.pose[2]]

@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "landmark_msgs__py",
+		"source" : "/home/s2c2/Desktop/SESASR/lab05/build/landmark_msgs/landmark_msgs__py"
+	}
+}

@@ -1,0 +1,24 @@
+[2.523s] Invoking command in '/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/turtlebot3_perception': CMAKE_PREFIX_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_simulations:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_gazebo:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_fake_node LD_LIBRARY_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_perception build --build-base /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build install --record /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log --single-version-externally-managed install_data
+[3.288s] running egg_info
+[3.295s] writing ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/PKG-INFO
+[3.295s] writing dependency_links to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/dependency_links.txt
+[3.297s] writing entry points to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/entry_points.txt
+[3.298s] writing requirements to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/requires.txt
+[3.298s] writing top-level names to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/top_level.txt
+[3.306s] reading manifest file '../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/SOURCES.txt'
+[3.311s] adding license file 'LICENSE'
+[3.312s] writing manifest file '../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/SOURCES.txt'
+[3.313s] running build
+[3.313s] running build_py
+[3.314s] running install
+[3.316s] running install_lib
+[3.318s] running install_data
+[3.319s] running install_egg_info
+[3.324s] removing '/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception-0.0.0-py3.10.egg-info' (and everything under it)
+[3.327s] Copying ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception-0.0.0-py3.10.egg-info
+[3.330s] running install_scripts
+[3.397s] Installing detection2landmark script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[3.400s] Installing landmark_simulator script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[3.400s] Installing laserscan2lines script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[3.401s] writing list of installed files to '/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log'
+[3.510s] Invoked command in '/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/turtlebot3_perception' returned '0': CMAKE_PREFIX_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_simulations:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_gazebo:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_fake_node LD_LIBRARY_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_perception build --build-base /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build install --record /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log --single-version-externally-managed install_data
