@@ -29,6 +29,7 @@ class DWANode(Node):
             weight_angle=0.1,
             weight_vel= 0.6,
             weight_obs=0.05,
+            weight_target=0.01,
             obstacles_map=np.empty((0, 2)),
             init_pose=self.init_pose,
             max_linear_acc=0.5,

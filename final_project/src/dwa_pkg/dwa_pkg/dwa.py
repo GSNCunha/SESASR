@@ -14,6 +14,7 @@ class DWA():
                  weight_angle = 0.04,
                  weight_vel = 0.2,
                  weight_obs = 0.1,
+                 weight_target = 0.1,
                  obstacles_map = None, # A list of obstacles poses in the map # TO DO: accept a gridmap and use local map
                  **kwargs
                  ):
@@ -32,6 +33,7 @@ class DWA():
         self.weight_angle = weight_angle
         self.weight_vel = weight_vel
         self.weight_obs = weight_obs
+        self.weight_target = weight_target
 
         self.obstacle_max_dist = 3 # like a local costmap size
         self.max_num_steps = 300
@@ -166,7 +168,7 @@ class DWA():
     def evaluate_paths(self, paths, velocities, goal_pose, robot_pose, obstacles):
         """
         Evaluate the simulated paths using the objective function.
-        J = w_h * heading + w_v * vel + w_o * obst_dist
+        J = w_h * heading + w_v * vel + w_o * obst_dist + w_t * target_distance
         """
         # detect nearest obstacle
         nearest_obs = calc_nearest_obs(robot_pose, obstacles)
@@ -178,22 +180,25 @@ class DWA():
         score_vel = self.score_vel(velocities, paths, goal_pose)
         # (3) obstacles
         score_obstacles = self.score_obstacles(paths, nearest_obs)
+        # (4) target distance
+        score_target = self.score_target_distance(paths, goal_pose)
 
         # normalization
         score_heading_angles = normalize(score_heading_angles)
         score_vel = normalize(score_vel)
         score_obstacles = normalize(score_obstacles)
+        score_target = normalize(score_target)
 
         opt_idx = np.argmax(np.sum(
-            np.array([score_heading_angles, score_vel, score_obstacles])
-            * np.array([[self.weight_angle, self.weight_vel, self.weight_obs]]).T,
+            np.array([score_heading_angles, score_vel, score_obstacles, score_target])
+            * np.array([[self.weight_angle, self.weight_vel, self.weight_obs, self.weight_target]]).T,
             axis=0,
         ))
 
         try:
             return opt_idx
-        except:
-            raise Exception("Not possible to find an optimal path")
+        except Exception as e:
+            raise Exception("Not possible to find an optimal path") from e
 
     def score_heading_angle(self, path, goal_pose):
 
@@ -237,6 +242,18 @@ class DWA():
             score_obstacle[score_obstacle < self.robot.radius + self.collision_tol] = -100
                
         return score_obstacle
+    
+    def score_target_distance(self, path, goal_pose, center=0.3, width=10):
+        """
+        Compute the score for target distance based on proximity to the goal.
+        """
+        dist_to_goal = np.linalg.norm(path[:, -1, 0:2] - goal_pose, axis=-1)
+
+        # Ensure the result is between 0 and 1
+        return np.maximum(0, 1 - width * (dist_to_goal - center) ** 2)
+
+
+
 
 
 
