@@ -1,0 +1,4 @@
+[console_scripts]
+odom_fix = pf_pkg.odomFix_node:main
+pf_node = pf_pkg.pfpkg:main
+

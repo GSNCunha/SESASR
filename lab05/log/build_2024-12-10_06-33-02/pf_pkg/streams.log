@@ -1,0 +1,31 @@
+[2.968s] Invoking command in '/home/s2c2/Desktop/SESASR/lab05/src/pf_pkg': PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build install --record /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data
+[3.963s] running egg_info
+[3.967s] writing ../../build/pf_pkg/pf_pkg.egg-info/PKG-INFO
+[3.967s] writing dependency_links to ../../build/pf_pkg/pf_pkg.egg-info/dependency_links.txt
+[3.974s] writing entry points to ../../build/pf_pkg/pf_pkg.egg-info/entry_points.txt
+[3.974s] writing requirements to ../../build/pf_pkg/pf_pkg.egg-info/requires.txt
+[3.975s] writing top-level names to ../../build/pf_pkg/pf_pkg.egg-info/top_level.txt
+[3.976s] reading manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[3.985s] adding license file 'LICENSE'
+[3.986s] writing manifest file '../../build/pf_pkg/pf_pkg.egg-info/SOURCES.txt'
+[3.987s] running build
+[3.987s] running build_py
+[3.988s] copying pf_pkg/probabilistic_models.py -> /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[3.992s] copying pf_pkg/pf.py -> /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[3.992s] copying pf_pkg/pfpkg.py -> /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg
+[3.998s] running install
+[3.999s] running install_lib
+[4.007s] copying /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/probabilistic_models.py -> /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[4.008s] copying /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/pf.py -> /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[4.008s] copying /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build/lib/pf_pkg/pfpkg.py -> /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg
+[4.011s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/probabilistic_models.py to probabilistic_models.cpython-310.pyc
+[4.016s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/pf.py to pf.cpython-310.pyc
+[4.020s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg/pfpkg.py to pfpkg.cpython-310.pyc
+[4.030s] running install_data
+[4.032s] running install_egg_info
+[4.039s] removing '/home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg-0.0.0-py3.10.egg-info' (and everything under it)
+[4.042s] Copying ../../build/pf_pkg/pf_pkg.egg-info to /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages/pf_pkg-0.0.0-py3.10.egg-info
+[4.049s] running install_scripts
+[4.123s] Installing pf_node script to /home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/pf_pkg
+[4.128s] writing list of installed files to '/home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/install.log'
+[4.236s] Invoked command in '/home/s2c2/Desktop/SESASR/lab05/src/pf_pkg' returned '0': PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/pf_pkg/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/pf_pkg build --build-base /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/build install --record /home/s2c2/Desktop/SESASR/lab05/build/pf_pkg/install.log --single-version-externally-managed install_data

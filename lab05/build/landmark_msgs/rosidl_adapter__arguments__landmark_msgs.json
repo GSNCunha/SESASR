@@ -1,0 +1,7 @@
+{
+  "package_name": "landmark_msgs",
+  "non_idl_tuples": [
+    "/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/landmark_msgs:msg/Landmark.msg",
+    "/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/landmark_msgs:msg/LandmarkArray.msg"
+  ]
+}

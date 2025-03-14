@@ -1,0 +1,58 @@
+[3.673s] Invoking command in '/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/turtlebot3_perception': CMAKE_PREFIX_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_simulations:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_gazebo:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_fake_node LD_LIBRARY_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_perception build --build-base /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build install --record /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log --single-version-externally-managed install_data
+[4.521s] running egg_info
+[4.525s] creating ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info
+[4.528s] writing ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/PKG-INFO
+[4.530s] writing dependency_links to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/dependency_links.txt
+[4.535s] writing entry points to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/entry_points.txt
+[4.537s] writing requirements to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/requires.txt
+[4.543s] writing top-level names to ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/top_level.txt
+[4.543s] writing manifest file '../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/SOURCES.txt'
+[4.550s] reading manifest file '../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/SOURCES.txt'
+[4.552s] adding license file 'LICENSE'
+[4.555s] writing manifest file '../../../build/turtlebot3_perception/turtlebot3_perception.egg-info/SOURCES.txt'
+[4.559s] running build
+[4.560s] running build_py
+[4.562s] creating /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build
+[4.563s] creating /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib
+[4.564s] creating /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.564s] copying turtlebot3_perception/laserscan2lines_node.py -> /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.568s] copying turtlebot3_perception/__init__.py -> /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.568s] copying turtlebot3_perception/detection2landmark.py -> /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.570s] copying turtlebot3_perception/laserscan2lines.py -> /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.573s] copying turtlebot3_perception/landmark_simulator.py -> /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception
+[4.577s] running install
+[4.580s] running install_lib
+[4.582s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.583s] copying /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception/laserscan2lines_node.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.585s] copying /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception/__init__.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.587s] copying /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception/detection2landmark.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.590s] copying /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception/laserscan2lines.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.592s] copying /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build/lib/turtlebot3_perception/landmark_simulator.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception
+[4.595s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception/laserscan2lines_node.py to laserscan2lines_node.cpython-310.pyc
+[4.608s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception/__init__.py to __init__.cpython-310.pyc
+[4.608s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception/detection2landmark.py to detection2landmark.cpython-310.pyc
+[4.612s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception/laserscan2lines.py to laserscan2lines.cpython-310.pyc
+[4.616s] byte-compiling /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception/landmark_simulator.py to landmark_simulator.cpython-310.pyc
+[4.628s] running install_data
+[4.630s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/ament_index
+[4.636s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/ament_index/resource_index
+[4.636s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/ament_index/resource_index/packages
+[4.642s] copying resource/turtlebot3_perception -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/ament_index/resource_index/packages
+[4.642s] copying package.xml -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception
+[4.644s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/launch
+[4.644s] copying launch/rs_launch_composable.launch.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/launch
+[4.650s] copying launch/camera.launch.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/launch
+[4.650s] copying launch/apriltag.launch.py -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/launch
+[4.651s] creating /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/config
+[4.656s] copying config/default.rviz -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/config
+[4.658s] copying config/apriltag.yaml -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/config
+[4.660s] copying config/oakd_config.yaml -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/config
+[4.662s] copying config/landmarks.yaml -> /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/share/turtlebot3_perception/config
+[4.665s] running install_egg_info
+[4.669s] Copying ../../../build/turtlebot3_perception/turtlebot3_perception.egg-info to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages/turtlebot3_perception-0.0.0-py3.10.egg-info
+[4.674s] running install_scripts
+[4.740s] Installing detection2landmark script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[4.742s] Installing landmark_simulator script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[4.746s] Installing laserscan2lines script to /home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/turtlebot3_perception
+[4.747s] writing list of installed files to '/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log'
+[4.841s] Invoked command in '/home/s2c2/Desktop/SESASR/lab05/src/turtlebot3_perception/turtlebot3_perception' returned '0': CMAKE_PREFIX_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_simulations:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_gazebo:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_fake_node LD_LIBRARY_PATH=/home/s2c2/Desktop/SESASR/lab05/install/landmark_msgs/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins:/usr/share/gazebo/../../lib/x86_64-linux-gnu/gazebo-11/plugins PYTHONPATH=/home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/s2c2/Desktop/SESASR/lab05/install/turtlebot3_perception/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/turtlebot3_perception build --build-base /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/build install --record /home/s2c2/Desktop/SESASR/lab05/build/turtlebot3_perception/install.log --single-version-externally-managed install_data
